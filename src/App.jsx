@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 //IMPORT COMPONENTS AND ROUTES
 import Header from './components/Header/Header.jsx';
-import Home from './components/Routes/Home/Home.jsx';
-import DonatedBook from './components/Routes/DonatedBook/DonatedBook.jsx';
-import Donate from './components/Routes/Donate/Donate.jsx';
+import Home from './components/Routes/Home.jsx';
+import DonatedBook from './components/Routes/DonatedBooks.jsx';
+import Donate from './components/Routes/Donate.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
 function App() {
@@ -16,15 +16,15 @@ function App() {
     <BrowserRouter>
       <nav>
         <ul>
-          <Link to='/'>Home</Link>
-          <Link to='/Donate'> Donate</Link>
-          <Link to='/DonatedBooks'> Donated Books</Link>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/Donate'> Donate</Link></li>
+          <li><Link to='/DonatedBook'> Donated Books</Link></li>
         </ul>
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Donate' element={<Donate />} />
-        <Route path='/DonatedBooks' element={<DonatedBook />} />
+        <Route path='/DonatedBook' element={<DonatedBook />} />
       </Routes> 
     </BrowserRouter>
     <Footer/>
