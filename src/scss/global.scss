@@ -1,0 +1,17 @@
+//IMPORT PATTERNS
+@forward './patterns/reset.module.scss';
+@forward './patterns/color.module.scss';
+@forward './patterns/typography.module.scss';
+
+//IMPORT MIXINS
+@forward './mixins/mixins.module.scss';
+
+//IMPORT CONTAINER
+@forward './container/container.module.scss';
+
+//IMPORT COMPONENTS
+@forward './styleComponents/header/header.module.scss';
+@forward './styleComponents/footer/footer.module.scss';
+@forward './styleComponents/routes/home/home.module.scss';
+@forward './styleComponents/routes/donated-book/donatedbook.module.scss';
+@forward './styleComponents/routes/donate/donate.module.scss';

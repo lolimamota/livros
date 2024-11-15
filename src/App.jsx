@@ -1,8 +1,11 @@
 import React from 'react'
+import './scss/global.scss'
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <h1>Estamos testando o funcionamento</h1>
+    </div>
   )
 }
 
