@@ -4,9 +4,24 @@
 .Header{
     background: color.$bg-header;
     color: color.$text-header;
-    @include mixins.flex($justify: space-between);
+    @include mixins.flex($justify: space-between, $align: center);
     
     img{
         width: 50px;
+    }
+}
+
+.SectionLogo{
+    @include mixins.flex($justify: space-around, $align: center);
+
+}
+.Nav{
+    border: solid red;
+}
+
+.Ul{
+    @include mixins.flex($justify: space-around, $align: center, $gap: 2rem);
+    a{
+        color: color.$text-header;
     }
 }
