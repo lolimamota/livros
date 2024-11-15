@@ -1,17 +1,34 @@
-//IMPORT PATTERNS
-@forward './patterns/reset.module.scss';
-@forward './patterns/color.module.scss';
-@forward './patterns/typography.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
 
-//IMPORT MIXINS
-@forward './mixins/mixins.module.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Inter", serif;
+}
 
-//IMPORT CONTAINER
-@forward './container/container.module.scss';
+html{
+    font-size: 62,5%;
+}
 
-//IMPORT COMPONENTS
-@forward './styleComponents/header/header.module.scss';
-@forward './styleComponents/footer/footer.module.scss';
-@forward './styleComponents/routes/home/home.module.scss';
-@forward './styleComponents/routes/donated-book/donatedbook.module.scss';
-@forward './styleComponents/routes/donate/donate.module.scss';
+img{
+    width: 100%;
+}
+
+h1{
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.2rem;
+}
+
+p{
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+}
