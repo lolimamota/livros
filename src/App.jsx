@@ -1,17 +1,22 @@
-import React from 'react'
-import './scss/global.scss'
+import React from 'react';
+
+// //IMPORT ROUTES
+// import Home from './components/Routes/Home.jsx';
+// import DonatedBook from './components/Routes/DonatedBooks.jsx';
+// import Donate from './components/Routes/Donate.jsx';
 
 //IMPORT COMPONENTS
-import Header from '../src/components/Header/Header.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Header from './components/Header/Header.jsx';
+import Router from './components/Routes/Router.jsx';
+// import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
     <>
-    <Header />
-    <Footer/>
+      <Header />
+      {/* <Router /> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
