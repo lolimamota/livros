@@ -1,0 +1,12 @@
+@use '../../patterns/color.scss' as color;
+@use '../../mixins/mixins.module.scss' as mixins;
+
+.Header{
+    background: color.$bg-header;
+    color: color.$text-header;
+    @include mixins.flex($justify: space-between);
+    
+    img{
+        width: 50px;
+    }
+}
