@@ -1,22 +1,40 @@
-import React from 'react';
+import React from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
-// //IMPORT ROUTES
-// import Home from './components/Routes/Home.jsx';
-// import DonatedBook from './components/Routes/DonatedBooks.jsx';
-// import Donate from './components/Routes/Donate.jsx';
+//IMPORT IMAGES
+import Logo from '@assets/header-img/livrologo.png';
+import Lupa from '@assets/header-img/lupa.png'
 
-//IMPORT COMPONENTS
-import Header from './components/Header/Header.jsx';
-import Router from './components/Routes/Router.jsx';
-// import Footer from './components/Footer/Footer.jsx';
+//IMPORT ROUTES
+
+import Home from './components/Home';
+import Donate from './components/Donate';
+import DonatedBooks from './components/DonatedBooks';
 
 function App() {
   return (
-    <>
-      <Header />
-      {/* <Router /> */}
-    </>
-  );
+    <BrowserRouter>
+      <section>
+        <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" />
+        <h1>Livros Vai Na Web</h1>
+      </section>
+      <nav>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/DonatedBooks">Donated Books</Link></li>
+        <li><Link to="/Donate">Donate</Link></li>
+      </nav>
+      <section>
+        <input type="search" name="search" id="search" />
+        <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" />
+      </section>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/DonatedBooks' element={<DonatedBooks />}/>
+        <Route path='/Donate' element={<Donate />}/>
+      </Routes>
+      
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
