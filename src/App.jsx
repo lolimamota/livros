@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import '../src/scss/global.scss';
 
 //IMPORT IMAGES
 import Logo from '@assets/header-img/livrologo.png';
