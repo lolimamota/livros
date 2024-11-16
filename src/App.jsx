@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import '../src/scss/global.scss';
+import './scss/global.scss';
 
 //IMPORT DE ESTILOS
+// import S from './scss/global.scss';
 import S from './scss/container/container.module.scss';
 
 //IMPORT IMAGES
@@ -17,7 +18,7 @@ import DonatedBooks from './pages/DonatedBooks';
 
 function App() {
   return (
-    <BrowserRouter > 
+    <BrowserRouter> 
       <section className={S.container}>
       <div>
         <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" />
