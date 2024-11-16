@@ -7,9 +7,9 @@ import Lupa from '@assets/header-img/lupa.png'
 
 //IMPORT ROUTES
 
-import Home from './components/Home';
-import Donate from './components/Donate';
-import DonatedBooks from './components/DonatedBooks';
+import Home from './pages/Home';
+import Donate from './pages/Donate';
+import DonatedBooks from './pages/DonatedBooks';
 
 function App() {
   return (
