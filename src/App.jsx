@@ -14,26 +14,27 @@ import DonatedBooks from './pages/DonatedBooks';
 
 function App() {
   return (
-    <BrowserRouter>
-      <section>
+    <BrowserRouter> 
+      <section className='container'>
+      <div>
         <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" />
         <h1>Livros Vai Na Web</h1>
-      </section>
+      </div>
       <nav>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/DonatedBooks">Donated Books</Link></li>
         <li><Link to="/Donate">Donate</Link></li>
       </nav>
-      <section>
+      <div>
         <input type="search" name="search" id="search" />
         <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" />
-      </section>
+      </div>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/DonatedBooks' element={<DonatedBooks />}/>
         <Route path='/Donate' element={<Donate />}/>
       </Routes>
-      
+      </section> 
     </BrowserRouter>
   )
 }
