@@ -2,6 +2,9 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import '../src/scss/global.scss';
 
+//IMPORT DE ESTILOS
+import S from './scss/container/container.module.scss';
+
 //IMPORT IMAGES
 import Logo from '@assets/header-img/livrologo.png';
 import Lupa from '@assets/header-img/lupa.png'
@@ -14,8 +17,8 @@ import DonatedBooks from './pages/DonatedBooks';
 
 function App() {
   return (
-    <BrowserRouter> 
-      <section className='container'>
+    <BrowserRouter > 
+      <section className={S.container}>
       <div>
         <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" />
         <h1>Livros Vai Na Web</h1>
