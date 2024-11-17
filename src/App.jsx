@@ -43,8 +43,9 @@ function App() {
           </ul>
         </nav>
         <form className={S.divInput}>
-          <input type="search" name="search" id="search" />
-          <button>
+          <input type="text" className="search-input" placeholder="Pesquise aqui" aria-label="search"
+            autocomplete="off" />
+          <button  className="search-submt" aria-label="submit search">
             <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
           </button>
         </form>

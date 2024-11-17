@@ -32,12 +32,17 @@
         
     }
     .divInput{
-        button{
+        .search-submt{
             width: 1.5vw;
             border-radius: 100px 100px 100px 100px; 
             background-color: transparent;
             border: solid #FFF .1rem;
             cursor: pointer;
+        }
+        .search-input{
+            border-radius: 100px 100px 100px 100px; 
+            background-color: transparent;
+            border: solid #FFF .1rem;
         }
     }
 }
