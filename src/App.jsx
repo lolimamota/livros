@@ -19,7 +19,7 @@ import DonatedBooks from './pages/DonatedBooks';
 function App() {
   return (
     <BrowserRouter> 
-      <section className={S.container}>
+      <section className={S.container} id='browserStyle'>
       <div>
         <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" />
         <h1>Livros Vai Na Web</h1>
@@ -31,14 +31,14 @@ function App() {
       </nav>
       <div>
         <input type="search" name="search" id="search" />
-        <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" />
+        <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className='wLupa'/>
       </div>
+      </section> 
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/DonatedBooks' element={<DonatedBooks />}/>
         <Route path='/Donate' element={<Donate />}/>
       </Routes>
-      </section> 
     </BrowserRouter>
   )
 }

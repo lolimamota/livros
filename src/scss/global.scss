@@ -44,7 +44,15 @@ p{
 
 // ---------------------------- ESTILIZAÇÃO DO APP ------------------------------
 
-.routerContainer{
-    @include mixins.flex($justify: space-around);
+#browserStyle{
     background: color.$bg-header;
+    color: color.$text-header;
+    
+    img{
+        width: 50px;
+    }
+
+    .wlupa{
+        width: 10px;
+    }
 }
