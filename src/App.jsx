@@ -42,10 +42,12 @@ function App() {
             </li>
           </ul>
         </nav>
-        <div className={S.divInput}>
+        <form className={S.divInput}>
           <input type="search" name="search" id="search" />
-          <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
-        </div>
+          <button>
+            <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
+          </button>
+        </form>
       </section>
       <Routes>
         <Route path='/' element={<Home />} />
