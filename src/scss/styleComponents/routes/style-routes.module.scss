@@ -1,0 +1,45 @@
+@use '../../patterns/color.scss' as color;
+@use '../../mixins/mixins.module.scss' as mixins;
+
+
+#styleBrowser{
+    width: 100%;
+    background: color.$bg-header;
+    color: color.$text-header;
+    @include mixins.flex($justify: space-around, $align: center);
+    padding: .5rem;
+
+    .divLogo, .navigation, .divInput{
+        @include mixins.flex($justify: space-around, $align: center);
+        padding: .2rem;
+    }
+
+    .ulFlex{
+        // border: solid #FFF;
+        @include mixins.flex($justify: space-evenly, $align: center);
+        min-width: 50vw;
+    }
+    .divLogo{
+        @include mixins.flex($justify: space-around, $align: center, $gap: 1rem);
+        // border: solid magenta;
+    }
+    .navigation{
+        // border: solid red;
+        a{
+            text-decoration: none;
+            color: color.$text-header;
+        }
+        
+    }
+    // .divInput{
+    //     border: solid green;
+    // }
+}
+
+.wLogo{
+    width: 2vw;
+}
+
+.wLupa{
+    width: 1vw;
+}

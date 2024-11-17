@@ -1,7 +1,3 @@
-//USE RULES
-@use './patterns/color.scss' as color;
-@use './mixins/mixins.module.scss' as mixins;
-
 //IMPORT FONTS
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
 
@@ -27,7 +23,7 @@ img{
 //TIPOGRAPHY
 
 h1{
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 h2{
@@ -40,19 +36,4 @@ h3{
 
 p{
     font-size: clamp(1.2rem, 3vw, 2.2rem);
-}
-
-// ---------------------------- ESTILIZAÇÃO DO APP ------------------------------
-
-#browserStyle{
-    background: color.$bg-header;
-    color: color.$text-header;
-    
-    img{
-        width: 50px;
-    }
-
-    .wlupa{
-        width: 10px;
-    }
 }
