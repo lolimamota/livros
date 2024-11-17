@@ -46,11 +46,17 @@
         cursor: pointer;
     }
     .searchInput{
-        color: color.$text-header;
         border-radius: 100px 100px 100px 100px; 
         background-color: transparent;
         border: none;
         outline: none;
+        width: .2vw;
+        transition: .3s ease-in-out;
+
+            &:hover{
+                width:15vw;
+                color: color.$text-header;
+            }
         }
     }
 
@@ -65,5 +71,6 @@
 }
 
 input::-webkit-input-placeholder {
-    color: color.$text-header;
-  }
+            color: color.$text-header;
+            margin-left: 3rem;    
+}
