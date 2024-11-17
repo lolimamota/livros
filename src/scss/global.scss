@@ -1,4 +1,11 @@
+//USE RULES
+@use './patterns/color.scss' as color;
+@use './mixins/mixins.module.scss' as mixins;
+
+//IMPORT FONTS
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
+
+//GLOBAL STYLES
 
 *{
     margin: 0;
@@ -17,6 +24,8 @@ img{
     width: 100%;
 }
 
+//TIPOGRAPHY
+
 h1{
     font-size: clamp(1.5rem, 5vw, 2rem);
 }
@@ -34,3 +43,8 @@ p{
 }
 
 // ---------------------------- ESTILIZAÇÃO DO APP ------------------------------
+
+.routerContainer{
+    @include mixins.flex($justify: space-around);
+    background: color.$bg-header;
+}
