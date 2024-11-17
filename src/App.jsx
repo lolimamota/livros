@@ -31,13 +31,13 @@ function App() {
               </Link>
             </li>
             <li>
-              <Link to="/DonatedBooks">
-                Donated Books
+              <Link to="/Donate">
+                Donate
               </Link>
             </li>
             <li>
-              <Link to="/Donate">
-                Donate
+              <Link to="/DonatedBooks">
+                Donated Books
               </Link>
             </li>
           </ul>
