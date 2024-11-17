@@ -31,22 +31,29 @@
         }
         
     }
+
     .divInput{
-        .searchSubmt{
-            width: 1.5vw;
-            border-radius: 100px 100px 100px 100px; 
-            background-color: transparent;
-            border: solid #FFF .1rem;
-            cursor: pointer;
-        }
-        .searchInput{
-            color: color.$text-header;
-            border-radius: 100px 100px 100px 100px; 
-            background-color: transparent;
-            border: solid #FFF .1rem;
+        display: flex; 
+        align-items: center; 
+        border: 2px solid #FFF; border-radius: 50px; 
+        overflow: hidden;
+    }
+    .searchSubmt{
+        width: 1.5vw;
+        border-radius: 100px 100px 100px 100px; 
+        background-color: transparent;
+        border: solid #FFF .1rem;
+        cursor: pointer;
+    }
+    .searchInput{
+        color: color.$text-header;
+        border-radius: 100px 100px 100px 100px; 
+        background-color: transparent;
+        border: none;
+        outline: none;
         }
     }
-}
+
 
 .wLogo{
     width: 2vw;
