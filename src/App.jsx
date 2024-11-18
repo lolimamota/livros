@@ -15,6 +15,9 @@ import Home from './pages/Home';
 import Donate from './pages/Donate';
 import DonatedBooks from './pages/DonatedBooks';
 
+//IMPORT COMPONENTS
+import Footer from './pages/footer/Footer.jsx';
+
 function App() {
   return (
     <BrowserRouter>
@@ -54,6 +57,7 @@ function App() {
         <Route path='/DonatedBooks' element={<DonatedBooks />} />
         <Route path='/Donate' element={<Donate />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
