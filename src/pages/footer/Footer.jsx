@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../scss/global.scss';
 
 //IMPORT IMAGES
 import Face from '../../assets/footer-img/face.png';
@@ -13,10 +14,10 @@ import S from '../../scss/styleComponents/footer/footer.module.scss';
 function Footer() {
     return (
         <footer className={S.footer}>
-            <section>
+            <section className={S.sectionContacts}>
                 <p>4002-8922</p>
                 <picture>
-                    <ul>
+                    <ul className={S.ulFlex}>
                         <li>
                             <a href="">
                                 <img src={Face} alt='Logo do facebook' />
@@ -45,7 +46,11 @@ function Footer() {
                     </ul>
                 </picture>
             </section>
-            <section>parte de baixo</section>
+            <section className={S.copyright}>
+                <p>
+                Layout desenvolvido pela Vai Na Web para fins educativos - 2024
+                </p>
+            </section>
         </footer>
     )
 }

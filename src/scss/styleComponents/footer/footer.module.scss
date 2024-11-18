@@ -1,0 +1,28 @@
+@use '../../patterns/color.scss' as color;
+@use '../../mixins/mixins.module.scss' as mixins;
+
+footer{
+    color: color.$text-header;
+    img{
+        width: 1rem;
+    }
+    a{
+        cursor: pointer;
+    }
+
+    .sectionContacts{
+        background: color.$bg-footer;
+        @include mixins.flex($justify: space-between, $align: center);
+        padding: 1rem;
+
+        .ulFlex{
+            width: 10vw;
+            @include mixins.flex($justify: space-around, $align: center);
+        }
+    }
+
+    .copyright{
+        background: color.$bg-footer-2;
+        @include mixins.flex($justify: center, $align: center);
+    }
+}
