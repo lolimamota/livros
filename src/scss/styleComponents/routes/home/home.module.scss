@@ -1,0 +1,10 @@
+@use '../../../patterns/color.scss' as color;
+@use '../../../mixins/mixins.module.scss' as mixins;
+
+.sectionBg{
+    background-color: purple;
+}
+
+.sectionCard{
+    background-color: orangered;
+}
