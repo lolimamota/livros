@@ -41,7 +41,7 @@ function Home() {
         {
           vantagens.map((item, index)=>{
             return(
-              <div key={index}> 
+              <div key={index} className={S.cardMap}> 
                 <img src={item.cardImg} alt={item.cardAlt} />
                 <h3>{item.cardText}</h3>
               </div>

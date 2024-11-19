@@ -27,7 +27,27 @@
     }
 }
 
+
+//ESTILIZAÇÃO DA SEGUNDA SECTION
+
 .sectionCard{
-    background-color: orangered;
     height: 85vh;
+    border: solid greenyellow;
+    @include mixins.flex($align: center, $justify: space-between);
+
+    .cardMap{
+        border: solid orangered;
+        width: 20%;
+        height: 40vh;
+        @include mixins.flex($align: center, $justify: center, $direction: column);
+
+        img{
+            width: 5vw;
+            border: solid blue;
+        }
+        h3{
+            border: solid purple;
+            width: 30%;
+        }
+    }
 }
