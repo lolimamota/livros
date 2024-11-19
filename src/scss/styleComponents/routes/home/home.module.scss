@@ -32,11 +32,9 @@
 
 .sectionCard{
     height: 85vh;
-    // border: solid greenyellow;
     @include mixins.flex($align: center, $justify: space-evenly);
 
     .cardMap{
-        // border: solid orangered;
         border-radius: 1rem;
         background-color: color.$bg-card;
         width: 20%;
@@ -45,10 +43,8 @@
 
         img{
             width: 8vw;
-            // border: solid blue;
         }
         h3{
-            // border: solid purple;
             width: 80%;
             text-align: center;
         }
