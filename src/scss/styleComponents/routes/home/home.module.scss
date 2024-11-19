@@ -39,15 +39,15 @@
         border: solid orangered;
         width: 20%;
         height: 40vh;
-        @include mixins.flex($align: center, $justify: center, $direction: column);
+        @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 1rem);
 
         img{
-            width: 5vw;
+            width: 8vw;
             border: solid blue;
         }
         h3{
             border: solid purple;
-            width: 30%;
+            text-align: center;
         }
     }
 }
