@@ -21,7 +21,11 @@
     }
     .divLogo{
         @include mixins.flex($justify: space-around, $align: center, $gap: 1rem);
-        // border: solid magenta;
+        
+        &:hover{
+            transform: scale(1.2);
+            transition: .2s;
+        }
     }
     .navigation{
         // border: solid red;
@@ -36,6 +40,10 @@
         }
         a:hover{
              background-size: 100% .1rem;
+        }
+        li:hover{
+            transform: scale(1.2);
+            transition: .2s;
         }
         
     }
@@ -52,6 +60,8 @@
         background-color: transparent;
         border: solid #FFF .1rem;
         cursor: pointer;
+
+        
     }
     .searchInput{
         border-radius: 100px 100px 100px 100px; 
