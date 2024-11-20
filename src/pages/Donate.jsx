@@ -12,7 +12,7 @@ function Donate() {
     <main className={S.mainDonate}>
       <section>
       <h2>
-      Por favor, preencha o formulário com suas informações e as informações do Livro
+      Por favor, preencha o formulário com as informações do Livro
       </h2>
       </section>
       <section className={S.cardForm}>
