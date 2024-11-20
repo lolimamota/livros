@@ -19,27 +19,27 @@ function Footer() {
                 <picture>
                     <ul className={S.ulFlex}>
                         <li>
-                            <a href="">
+                            <a href="https://www.facebook.com/vainaweb">
                                 <img src={Face} alt='Logo do facebook' />
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://x.com/vainaweb">
                                 <img src={Tweet} alt='Logo do twitter' />
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.youtube.com/@VaiNaWeb">
                                 <img src={You} alt='Logo do youtube' />
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.linkedin.com/company/vainaweb/">
                                 <img src={Lkd} alt='Logo do linkedin' />
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://www.instagram.com/vainaweb/">
                                 <img src={Insta} alt='Logo do instagram' />
                             </a>
                         </li>
