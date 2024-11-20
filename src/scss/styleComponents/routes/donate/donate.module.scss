@@ -1,0 +1,40 @@
+@use '../../../patterns/color.scss' as color;
+@use '../../../mixins/mixins.module.scss' as mixins;
+
+
+.mainDonate{
+    @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 3.4rem);
+    padding: 2rem;
+
+    img{
+        width: 3vw;
+    }
+    h2{
+        font-weight: 400;
+    }
+}
+
+.cardForm{
+    border: solid color.$text-h3;
+    border-radius: 2rem;
+    padding: 2rem;
+
+    @include mixins.flex($align: center, $gap: 5rem, $justify: center, $direction: column)
+}
+
+.divForm{
+    // border:solid yellowgreen;
+    font-weight: 400;
+    color: color.$text-h3;
+    @include mixins.flex($align: center, $justify: center, $gap: 2rem)
+}
+.formInputs{
+    @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 3rem);
+
+    input{
+        border: solid color.$text-h3;
+        border-radius: .5rem;
+        width: 20vw;
+        height: 2rem;
+    }
+}
