@@ -37,6 +37,9 @@ function Home() {
       <section className={S.sectionBg}>
         <h1>VENHA FAZER PARTE DA MAIOR REDE DE DOAÇÃO</h1>
       </section>
+      <section className={S.sectionH2}>
+        <h2>Por que devo doar?</h2>
+      </section>
       <section className={S.sectionCard}>
         {
           vantagens.map((item, index)=>{

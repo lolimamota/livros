@@ -12,7 +12,7 @@
 
     h1{
         color: color.$text-header;
-        width: 18vw;
+        width: 15vw;
         text-align: left;
         margin-left: 10vw;
         //ANIMATION
@@ -49,4 +49,10 @@
             text-align: center;
         }
     }
+}
+.sectionH2{
+    border: solid red;
+    width: 12%;
+    color: color.$text-h3;
+    @include mixins.flex($align: center, $justify: start)
 }
