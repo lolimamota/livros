@@ -9,6 +9,9 @@ footer{
     a{
         cursor: pointer;
     }
+    img:hover{
+        transform: scale(1.2);
+    }
 
     .sectionContacts{
         background: color.$bg-footer;
