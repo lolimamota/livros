@@ -37,4 +37,9 @@
         width: 20vw;
         height: 2rem;
     }
+
+    input::-webkit-input-placeholder{
+        color: color.$text-h3;
+        padding: 1rem;
+    }
 }
