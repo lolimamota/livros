@@ -3,7 +3,7 @@
 
 
 .mainDonate{
-    @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 2.2rem);
+    @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 1rem);
     padding: 1rem;
 
     img{
@@ -41,5 +41,18 @@
     input::-webkit-input-placeholder{
         color: color.$text-h3;
         padding: 1rem;
+    }
+}
+.donateBtn{
+    background-color: color.$btn-submit;
+    width: 10vw;
+    height: 5vh;
+    color: color.$text-header;
+    border: none;
+    border-radius: 1rem;
+
+    &:hover{
+        background-color: color.$btn-hover;
+        color: color.$text-h3
     }
 }

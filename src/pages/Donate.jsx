@@ -25,7 +25,7 @@ function Donate() {
           <input type="text" id="category" placeholder="Categoria" />
           <input type="text" id="Author" placeholder="Autor" />
           <input type="text" id="imgLink" placeholder="Link da imagem" />
-          <button type='submit'>Doar</button>
+          <button type='submit' className={S.donateBtn}>Doar</button>
         </form>
       </section>
     </main>
