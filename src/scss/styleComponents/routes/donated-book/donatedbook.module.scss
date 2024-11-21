@@ -1,0 +1,13 @@
+@use '../../../patterns/color.scss' as color;
+@use '../../../mixins/mixins.module.scss' as mixins;
+
+.mainDonated{
+    border: solid red;
+}
+
+.sectionDonated{
+    border: solid green;
+    img{
+        width: 10rem;
+    }
+}
