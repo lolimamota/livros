@@ -1,10 +1,10 @@
 import React from 'react'
-import '../scss/global.scss';
+import '../../scss/global.scss';
 
 //IMPORT STYLE
-import S from '../scss/styleComponents/routes/donate/donate.module.scss';
+import S from '../../scss/styleComponents/routes/donate/donate.module.scss';
 
-import Book from '../assets/routes-img/livro.png'
+import Book from '@assets/routes-img/livro.png'
 
 
 function Donate() {

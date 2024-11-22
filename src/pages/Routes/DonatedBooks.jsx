@@ -1,12 +1,12 @@
 import React from 'react'
-import '../scss/global.scss'
+import '../../scss/global.scss'
 
 
 //IMPORT STYLE
-import S from '../scss/styleComponents/routes/donated-book/donatedbook.module.scss';
+import S from './../../scss/styleComponents/routes/donated-book/donatedbook.module.scss';
 
 //IMPORT IMAGES
-import LivroDoado from '../assets/routes-img/livrodoado.png'
+import LivroDoado from '@assets/routes-img/livrodoado.png'
 
 function DonatedBooks() {
   return (

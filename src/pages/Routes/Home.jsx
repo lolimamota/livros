@@ -1,12 +1,12 @@
 import React from 'react';
-import '../scss/global.scss';
+import '../../scss/global.scss';
 
-import S from '../scss/styleComponents/routes/home/home.module.scss';
+import S from '../../scss/styleComponents/routes/home/home.module.scss';  
 //IMPORT IMAGES
-import Ciranda from '../assets/routes-img/circulo-pessoa.png';
-import Leitor from '../assets/routes-img/lendo.png';
-import Uniao from '../assets/routes-img/mao-pessoa.png';
-import Balanca from '../assets/routes-img/balanca.png';
+import Ciranda from '@assets/routes-img/circulo-pessoa.png';
+import Leitor from '@assets/routes-img/lendo.png';
+import Uniao from '@assets/routes-img/mao-pessoa.png';
+import Balanca from '@assets/routes-img/balanca.png';
 
 
 function Home() {

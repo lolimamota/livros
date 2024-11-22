@@ -11,9 +11,9 @@ import Lupa from '@assets/header-img/lupa.png'
 
 //IMPORT ROUTES
 
-import Home from './pages/Home';
-import Donate from './pages/Donate';
-import DonatedBooks from './pages/DonatedBooks';
+import Home from './pages/Routes/Home.jsx';
+import Donate from './pages/Routes/Donate.jsx';
+import DonatedBooks from './pages/Routes/DonatedBooks.jsx';
 
 //IMPORT COMPONENTS
 import Footer from './pages/footer/Footer.jsx';
