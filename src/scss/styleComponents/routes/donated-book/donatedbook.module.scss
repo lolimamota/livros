@@ -3,6 +3,7 @@
 
 .mainDonated{
     border: solid red;
+    @include mixins.flex($align: center, $justify: center, $gap: 1rem);
 }
 
 .sectionDonated{

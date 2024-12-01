@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default async function funcLivros() {
+export default function ShowBook() {
     const [book, setBook] = useState([]);
     const getLivros = async () => {
 
