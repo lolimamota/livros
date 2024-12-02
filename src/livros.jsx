@@ -26,17 +26,19 @@ export default function ShowBook() {
     return (
         <section className={S.sectionDonated}>
             {book.map((book) => (
-                <div key={book.key}>
-                    <img src={`https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`} alt={book.title} />
-                    <h4>{book.title}</h4>
-                    {book.authors
-                        && book.authors.length > 0
-                        && (
-                            <h5>
-                                {book.authors.map(author => author.name).join(", ")}
-                            </h5>
-                        )}
-                </div>
+                <a href={`https://openlibrary.org${book.key}`} key={book.key} target="_blank" rel="noopener noreferrer">
+                    <div>
+                        <img src={`https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`} alt={book.title} />
+                        <h4>{book.title}</h4>
+                        {book.authors
+                            && book.authors.length > 0
+                            && (
+                                <h5>
+                                    {book.authors.map(author => author.name).join(", ")}
+                                </h5>
+                            )}
+                    </div>
+                </a>
             ))}
         </section>
     )
