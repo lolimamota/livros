@@ -2,13 +2,35 @@
 @use '../../../mixins/mixins.module.scss' as mixins;
 
 .mainDonated{
-    border: solid red;
+    // border: solid red;
     @include mixins.flex($align: center, $justify: center, $gap: 1rem);
 }
 
 .sectionDonated{
+    width: 100%;
     border: solid green;
-    img{
-        width: 10rem;
+    @include mixins.flex($align: center, $justify: center, $gap: 5rem, $direction: row);
+    text-align: center;
+    padding: 4.2rem;
+
+    h4{
+       color: color.$text-h3; 
+       font-weight: 600;
+    }
+
+    h5{
+        color: color.$text-h3;
+        font-weight: 400;
+        margin-top: .2rem;
+    }
+
+
+    
+    div{
+        border: solid yellowgreen;
+        padding: 1rem;
+        img{
+            width: 10rem;
+        }
     }
 }
