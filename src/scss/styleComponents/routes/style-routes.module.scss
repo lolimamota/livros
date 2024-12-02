@@ -53,16 +53,19 @@
         align-items: center; 
         border: 2px solid #FFF; border-radius: 50px; 
         overflow: hidden;
-    }
+        &:active, &:focus, &:hover {
+            box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+        }
+
     .searchSubmt{
         width: 1.5vw;
         border-radius: 100px 100px 100px 100px; 
         background-color: transparent;
         border: solid #FFF .1rem;
         cursor: pointer;
-
-        
     }
+    }
+
     .searchInput{
         border-radius: 100px 100px 100px 100px; 
         background-color: transparent;
@@ -75,9 +78,6 @@
                 width:15vw;
                 color: color.$text-header;
             }
-            &:focus{
-                box-shadow: 0px 0px 10px 10px rgba(0, 86, 149, 0.2);
-            } 
         }
     }
 
