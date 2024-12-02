@@ -75,6 +75,9 @@
                 width:15vw;
                 color: color.$text-header;
             }
+            &:focus{
+                box-shadow: 0px 0px 10px 10px rgba(0, 86, 149, 0.2);
+            } 
         }
     }
 
@@ -90,5 +93,5 @@
 
 input::-webkit-input-placeholder {
             color: color.$text-header;
-            margin-left: 3rem;    
+            margin-left: 3rem;   
 }

@@ -7,8 +7,7 @@
 }
 
 .sectionDonated{
-    width: 100%;
-    @include mixins.flex($align: center, $justify: center, $gap: 5rem, $direction: row);
+    @include mixins.flex($align: center, $justify: space-between, $gap: 5rem);
     text-align: center;
     padding: 4.44rem;
 
@@ -27,11 +26,11 @@
 
     
     a{
-        width: 20%;
         height: 45vh;
         border: solid color.$text-h3;
         border-radius: .5rem;
-        padding: 1rem;
+        padding: .5rem;
+
         img{
             width: 10rem;
         }
