@@ -7,7 +7,7 @@
 }
 
 .sectionDonated{
-    @include mixins.flex($align: center, $justify: space-between, $gap: 5rem);
+    @include mixins.flex($align: center, $justify: space-between, $gap: 4rem);
     text-align: center;
     padding: 4.44rem;
 
