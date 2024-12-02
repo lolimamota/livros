@@ -21,10 +21,10 @@ function Donate() {
           <h3>Informações do Livro</h3>
         </div>
         <form className={S.formInputs}>
-          <input type="text" id="title" placeholder="Título" />
-          <input type="text" id="category" placeholder="Categoria" />
-          <input type="text" id="Author" placeholder="Autor" />
-          <input type="text" id="imgLink" placeholder="Link da imagem" />
+          <input className={S.shadowInput} type="text" id="title" placeholder="Título" />
+          <input className={S.shadowInput} type="text" id="category" placeholder="Categoria" />
+          <input className={S.shadowInput} type="text" id="Author" placeholder="Autor" />
+          <input className={S.shadowInput} type="text" id="imgLink" placeholder="Link da imagem" />
           <button type='submit' className={S.donateBtn}>Doar</button>
         </form>
       </section>

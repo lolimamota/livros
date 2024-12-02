@@ -56,3 +56,8 @@
         color: color.$text-h3
     }
 }
+
+.shadowInput:focus, .shadowInput:hover{
+        box-shadow: 2px 2px 20px color.$btn-submit;
+        color: color.$text-h3;
+}
