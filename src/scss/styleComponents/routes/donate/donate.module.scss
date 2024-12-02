@@ -4,7 +4,7 @@
 
 .mainDonate{
     @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 1rem);
-    padding: 1rem;
+    padding: 1.84rem;
 
     img{
         width: 3vw;
@@ -58,6 +58,6 @@
 }
 
 .shadowInput:focus, .shadowInput:hover{
-        box-shadow: 2px 2px 20px color.$btn-submit;
+        box-shadow: 1px 1px 10px color.$btn-submit;
         color: color.$text-h3;
 }
