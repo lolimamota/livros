@@ -1,6 +1,6 @@
 @use '../../patterns/color.scss' as color;
 @use '../../mixins/mixins.module.scss' as mixins;
-
+@use '../../mixins/mediaquery.module.scss' as break;
 
 #styleBrowser{
     width: 100%;
@@ -45,7 +45,9 @@
             transform: scale(1.2);
             transition: .2s;
         }
-        
+        @include break.mediaMobile{
+            display: none;            
+        } 
     }
 
     .divInput{
@@ -55,6 +57,9 @@
         overflow: hidden;
         &:active, &:focus, &:hover {
             box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.771);
+        }
+        @include break.mediaMobile{
+            display: none;
         }
 
     .searchSubmt{
@@ -78,6 +83,7 @@
                 width:15vw;
                 color: color.$text-header;
             }
+            
         }
     }
 
