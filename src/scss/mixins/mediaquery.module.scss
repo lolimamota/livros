@@ -1,0 +1,19 @@
+@use '../patterns/breakpointVariable.scss' as break;
+
+@mixin mediaMobile{
+    @media screen and (min-width: break.$mobile) and (max-width: break.$tablet) {
+        @content;
+    };
+}
+
+@mixin mediaTablet{
+    @media screen and (min-width: break.$tablet) and (max-width: break.$desktop) {
+        @content;
+    };
+}
+
+@mixin mediaDesktop{
+    @media screen and (min-width: break.$desktop) {
+        @content;
+    };
+}
