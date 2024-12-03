@@ -7,7 +7,7 @@
     background: color.$bg-header;
     color: color.$text-header;
     @include mixins.flex($justify: space-around, $align: center);
-    padding: .5rem;
+    padding: 2rem;
 
     .divLogo, .navigation, .divInput{
         @include mixins.flex($justify: space-around, $align: center);
@@ -26,6 +26,9 @@
             transform: scale(1.2);
             transition: .2s;
         }
+        // @include break.mediaMobile{
+        //     font-size: ;
+        // }
     }
     .navigation{
         // border: solid red;
@@ -99,5 +102,6 @@
 
 input::-webkit-input-placeholder {
             color: color.$text-header;
-            margin-left: 3rem;   
+            margin-left: 3rem; 
+            padding: 1rem;  
 }

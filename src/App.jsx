@@ -30,17 +30,17 @@ function App() {
           <ul className={S.ulFlex}>
             <li>
               <Link to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/Donate">
-                Donate
+                Início
               </Link>
             </li>
             <li>
               <Link to="/DonatedBooks">
-                Donated Books
+                Livros Doados
+              </Link>
+            </li>
+            <li>
+              <Link to="/Donate">
+                Quero Doar
               </Link>
             </li>
           </ul>
