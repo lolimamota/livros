@@ -34,7 +34,7 @@ function App() {
           <h1>Livros Vai Na Web</h1>
         </div>
         <nav className={`${S.navigation} ${menuOpen ? S.menuOpen : ''}`}>
-          <button className={S.closeMenu} onClick={closeMenu}>X</button>
+          <button className={S.closeBtnMenu} onClick={closeMenu}>X</button>
           <ul className={S.ulFlex}>
             <li>
               <Link to="/">
@@ -52,13 +52,13 @@ function App() {
               </Link>
             </li>
           </ul>
-        </nav>
         <form className={S.divInput}>
           <input type="text" className={S.searchInput} placeholder="O que você procura?" />
           <button  className={S.searchSubmt}>
             <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
           </button>
         </form>
+        </nav>
       </section>
       <Routes>
         <Route path='/' element={<Home />} />

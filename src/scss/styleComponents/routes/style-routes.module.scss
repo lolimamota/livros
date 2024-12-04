@@ -1,129 +1,154 @@
 @use '../../patterns/color.scss' as color;
 @use '../../mixins/mixins.module.scss' as mixins;
 
-#styleBrowser{
+#styleBrowser {
     width: 100%;
     background: color.$bg-header;
     color: color.$text-header;
     @include mixins.flex($justify: space-around, $align: center);
     padding: 2rem;
 
-    .divLogo, .navigation, .divInput{
+    .divLogo,
+    .navigation,
+    .divInput {
         @include mixins.flex($justify: space-around, $align: center);
         padding: .2rem;
     }
 
-    .ulFlex{
+    .ulFlex {
         // border: solid #FFF;
         @include mixins.flex($justify: space-evenly, $align: center);
         min-width: 50vw;
+        @include mixins.mediaMobile {
+            @include mixins.flex($direction: column, $gap: 2rem);
+            font-size: clamp(2rem, 10vw + 1em, 4rem);
+        }
     }
-    .divLogo{
+
+    .divLogo {
         @include mixins.flex($justify: space-around, $align: center, $gap: 1rem);
-        
-        &:hover{
+
+        &:hover {
             transform: scale(1.2);
             transition: .2s;
         }
-        @include mixins.mediaMobile{
-            img{
+
+        @include mixins.mediaMobile {
+            img {
                 width: 2.5rem;
             }
         }
     }
-    .navigation{
+
+    .navigation {
+
         // border: solid red;
-        a{
+        a {
             text-decoration: none;
             color: color.$text-header;
-            background-image: linear-gradient(90deg,color.$text-header, color.$text-header);
+            background-image: linear-gradient(90deg, color.$text-header, color.$text-header);
             background-size: 0% .1rem;
             background-repeat: no-repeat;
             background-position: left bottom;
             transition: background-size 300ms ease;
         }
-        a:hover{
-             background-size: 100% .1rem;
+
+        a:hover {
+            background-size: 100% .1rem;
         }
-        li:hover{
+
+        li:hover {
             transform: scale(1.2);
             transition: .2s;
         }
-        @include mixins.mediaMobile{
+
+        .closeBtnMenu {
             display: none;
 
-            &.menuOpen { 
-                display: grid;
+            @include mixins.mediaMobile {
+                display: block;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                color: color.$text-header;
+                align-self: flex-end ;
+            }
+        }
+
+        @include mixins.mediaMobile {
+            display: none;
+                @include mixins.flex($direction: column, $gap: 2rem);
+
+            &.menuOpen {
+                display: flex;
                 border: solid red;
-                position: fixed; 
-                top: 0; 
-                left: 0; 
-                width: 200px; 
-                height: 100%; background-color: color.$bg-footer;  
-                box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                background-color: color.$bg-footer;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
                 z-index: 1000;
-            };
+            }
 
-            .closeButton { 
-                background-color: transparent; 
-                border: none; 
-                font-size: 1.5rem; 
-                justify-self: end; 
-                cursor: pointer;      
-        } 
+            ;
+        }
     }
-}
 
-    .divInput{
-        display: flex; 
-        align-items: center; 
-        border: 2px solid #FFF; border-radius: 50px; 
+    .divInput {
+        display: flex;
+        align-items: center;
+        border: 2px solid #FFF;
+        border-radius: 50px;
         overflow: hidden;
-        &:active, &:focus, &:hover {
+
+        &:active,
+        &:focus,
+        &:hover {
             box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.771);
         }
-        @include mixins.mediaMobile{
+
+        @include mixins.mediaMobile {
             display: none;
         }
 
-    .searchSubmt{
-        width: 1.5vw;
-        border-radius: 100px 100px 100px 100px; 
-        background-color: transparent;
-        border: solid #FFF .1rem;
-        cursor: pointer;
-    }
+        .searchSubmt {
+            width: 1.5vw;
+            border-radius: 100px 100px 100px 100px;
+            background-color: transparent;
+            border: solid #FFF .1rem;
+            cursor: pointer;
+        }
     }
 
-    .searchInput{
-        border-radius: 100px 100px 100px 100px; 
+    .searchInput {
+        border-radius: 100px 100px 100px 100px;
         background-color: transparent;
         border: none;
         outline: none;
         width: .05vw;
         transition: .3s ease-in-out;
 
-            &:hover{
-                width:15vw;
-                color: color.$text-header;
-            }
-            
+        &:hover {
+            width: 15vw;
+            color: color.$text-header;
         }
 
+    }
+}
 
 
-.wLogo{
+.wLogo {
     width: 2vw;
 }
 
-.wLupa{
+.wLupa {
     width: 1vw;
     padding: .1rem;
 }
 
 input::-webkit-input-placeholder {
-            color: color.$text-header;
-            margin-left: 3rem; 
-            padding: 1rem;  
-}
+    color: color.$text-header;
+    margin-left: 3rem;
+    padding: 1rem;
 }
