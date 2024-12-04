@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {useState} from 'react';
 import './scss/global.scss';
 
 //IMPORT DE ESTILOS
@@ -19,14 +20,18 @@ import DonatedBooks from './pages/Routes/DonatedBooks.jsx';
 import Footer from './pages/footer/Footer.jsx';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  }
   return (
     <BrowserRouter>
       <section id={S.styleBrowser}>
-        <div className={S.divLogo}>
+        <div className={S.divLogo} onClick={toggleMenu}>
           <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" className={S.wLogo} />
           <h1>Livros Vai Na Web</h1>
         </div>
-        <nav className={S.navigation}>
+        <nav className={`${S.navigation} ${menuOpen ? S.menuOpen : ''}`}>
           <ul className={S.ulFlex}>
             <li>
               <Link to="/">
