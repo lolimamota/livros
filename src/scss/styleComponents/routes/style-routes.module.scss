@@ -50,19 +50,29 @@
             transition: .2s;
         }
         @include mixins.mediaMobile{
-            display: none; 
+            display: none;
+
             &.menuOpen { 
-                display: flex; flex-direction: column; 
+                display: grid;
+                border: solid red;
                 position: fixed; 
                 top: 0; 
                 left: 0; 
                 width: 200px; 
-                height: 100%; background-color: #fff;  
+                height: 100%; background-color: color.$bg-footer;  
                 box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
                 z-index: 1000;
-            }         
+            };
+
+            .closeButton { 
+                background-color: transparent; 
+                border: none; 
+                font-size: 1.5rem; 
+                justify-self: end; 
+                cursor: pointer;      
         } 
     }
+}
 
     .divInput{
         display: flex; 
@@ -99,7 +109,7 @@
             }
             
         }
-    }
+
 
 
 .wLogo{
@@ -115,4 +125,5 @@ input::-webkit-input-placeholder {
             color: color.$text-header;
             margin-left: 3rem; 
             padding: 1rem;  
+}
 }

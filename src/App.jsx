@@ -24,6 +24,8 @@ function App() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
+  const closeMenu = () => { setMenuOpen(false); };
+
   return (
     <BrowserRouter>
       <section id={S.styleBrowser}>
@@ -32,6 +34,7 @@ function App() {
           <h1>Livros Vai Na Web</h1>
         </div>
         <nav className={`${S.navigation} ${menuOpen ? S.menuOpen : ''}`}>
+          <button className={S.closeMenu} onClick={closeMenu}>X</button>
           <ul className={S.ulFlex}>
             <li>
               <Link to="/">
