@@ -18,12 +18,20 @@ footer{
         @include mixins.flex($justify: space-between, $align: center);
         padding: 1rem;
 
+        @include mixins.mediaMobile{
+            @include mixins.flex($justify: center, $align: center, $direction: column, $gap: 2rem)
+        }
+
         .ulFlex{
             width: 10vw;
             @include mixins.flex($justify: space-around, $align: center);
 
             @include mixins.mediaMobile{
-                display: none;
+                @include mixins.flex(
+                    $justify: center,
+                    $align: center,
+                    $gap: 1rem
+                )
             }
         }
     }
@@ -31,5 +39,9 @@ footer{
     .copyright{
         background: color.$bg-footer-2;
         @include mixins.flex($justify: center, $align: center);
+
+        @include mixins.mediaMobile{
+            text-align: center;
+        }
     }
 }
