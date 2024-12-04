@@ -77,18 +77,18 @@
 
         @include mixins.mediaMobile {
             display: none;
-                @include mixins.flex($direction: column, $gap: 2rem);
 
             &.menuOpen {
-                display: flex;
-                border: solid red;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100vh;
-                background-color: color.$bg-footer;
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                z-index: 1000;
+                display: grid; grid-template-rows: auto 1fr auto; 
+                position: fixed; 
+                top: 0; 
+                left: 0; 
+                width: 200px; 
+                height: 100%; background-color: color.$bg-footer; 
+                box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
+                z-index: 1000; 
+                padding: 1rem; 
+                gap: 1rem;
             }
 
             ;
