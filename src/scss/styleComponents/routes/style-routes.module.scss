@@ -26,9 +26,11 @@
             transform: scale(1.2);
             transition: .2s;
         }
-        // @include break.mediaMobile{
-        //     font-size: ;
-        // }
+        @include break.mediaMobile{
+            img{
+                width: 2.5rem;
+            }
+        }
     }
     .navigation{
         // border: solid red;
