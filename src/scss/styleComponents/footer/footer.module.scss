@@ -21,6 +21,10 @@ footer{
         .ulFlex{
             width: 10vw;
             @include mixins.flex($justify: space-around, $align: center);
+
+            @include mixins.mediaMobile{
+                display: none;
+            }
         }
     }
 
