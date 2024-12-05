@@ -3,7 +3,7 @@
 
 
 .mainDonate{
-    @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 2vw);
+    @include mixins.flex($align: center, $justify: space-evenly, $direction: column, $gap: 2vw);
     padding: 2rem;
     height: 82.8vh;
 
@@ -18,10 +18,8 @@
         img{
             width: 6vw;
         }
-        @include mixins.flex($align:center, $justify: center, $direction: column, $gap: 2rem);
+        @include mixins.flex($align:center, $justify: space-evenly, $direction: column);
         text-align: center;
-        padding: 2rem;
-        height: 73.7vh;
     }
 }
 
@@ -47,6 +45,9 @@
         border-radius: .5rem;
         width: 20vw;
         height: 2rem;
+        @include mixins.mediaMobile{
+            width: auto;
+        }
     }
 
     input::-webkit-input-placeholder{
@@ -66,9 +67,14 @@
         background-color: color.$btn-hover;
         color: color.$text-h3
     }
+
+    @include mixins.mediaMobile{
+        width: 30vw;
+    }
 }
 
 .shadowInput:focus, .shadowInput:hover{
         box-shadow: 1px 1px 10px color.$btn-submit;
         color: color.$text-h3;
+        border: none;
 }
