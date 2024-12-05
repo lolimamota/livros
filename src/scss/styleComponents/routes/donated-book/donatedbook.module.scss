@@ -9,7 +9,12 @@
 .sectionDonated{
     @include mixins.flex($align: center, $justify: space-between, $gap: 4rem);
     text-align: center;
-    padding: 4.44rem;
+    padding: 1rem;
+    height: calc(80.5vh);
+
+    .divTitle{
+        margin-top: 1rem;
+    }
 
     h4{
        color: color.$text-h3; 
@@ -26,13 +31,13 @@
 
     
     a{
-        height: 45vh;
+        height: 38.5vh;
         border: solid color.$text-h3;
         border-radius: .5rem;
-        padding: .5rem;
+        padding: 1rem;
 
         img{
-            width: 10rem;
+            width: 15rem;
         }
 
         &:hover{
