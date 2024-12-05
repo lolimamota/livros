@@ -51,6 +51,9 @@
             background-repeat: no-repeat;
             background-position: left bottom;
             transition: background-size 300ms ease;
+
+            transform: translateX(-100%);
+            transition: transform 300ms ease;
         }
 
         a:hover {
@@ -89,6 +92,7 @@
                 z-index: 1000; 
                 padding: 1rem; 
                 gap: 1rem;
+                transform: translateX(0);
             }
 
             ;
@@ -106,10 +110,6 @@
         &:focus,
         &:hover {
             box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.771);
-        }
-
-        @include mixins.mediaMobile {
-            display: none;
         }
 
         .searchSubmt {
