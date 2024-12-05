@@ -23,7 +23,7 @@ function Home() {
     },
     {
       cardImg: Uniao,
-      cardText: "Estimula o hábito da leitura e o aprendizado contínuo.",
+      cardText: "Fornece conhecimento e inspiração, permitindo que indivíduos transformem suas vidas.",
       cardAlt:"Uma mão fechada dentro de um circulo, com varios bonecos semelhante a humanos de pé, com linhas que ligam a cabeça deles no circulo da mão, dando a sensação de união do coletivo."
     },
     {
