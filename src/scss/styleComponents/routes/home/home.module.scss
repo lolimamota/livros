@@ -11,7 +11,7 @@
     @include mixins.flex($justify: start, $align: center);
     h1 {
         color: color.$text-header;
-        width: 30vw;
+        width: 25vw;
         text-align: left;
         margin-left: 5vw;
         font-weight: 700;
@@ -61,7 +61,7 @@
         }
 
         img {
-            width: 6vw;
+            width: clamp(60px, 6vw + 1em, 100px);
         }
 
         h3 {
