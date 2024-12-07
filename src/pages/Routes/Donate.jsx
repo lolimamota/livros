@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //IMPORT STYLE
 import S from '../../scss/styleComponents/routes/donate/donate.module.scss';
-// import StyleSheetNotification from '../../scss/styleComponents/notifications/notifications.module.scss';
+
 //IMPORT IMAGES
 import Book from '@assets/routes-img/livro.png'
 
@@ -13,9 +13,7 @@ import Book from '@assets/routes-img/livro.png'
 
 function Donate() {
   const notify = () => toast("wow deu bom malandro!");
-  // const notify = () => toast{
-  //   <StyleSheetNotification />
-  // };
+  
   const handleSubmit = (event) => { 
     event.preventDefault();
   }; 
