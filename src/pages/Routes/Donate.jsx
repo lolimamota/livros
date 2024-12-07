@@ -1,5 +1,6 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { Zoom } from 'react-toastify';
 import '../../scss/global.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,17 +13,44 @@ import Book from '@assets/routes-img/livro.png'
 
 
 function Donate() {
-  const notify = () => {
-    toast.success("É, você conseguiu fazer isso!",
+  const notifySuccess = () => {
+    toast.success("Parabéns! Você doou um livro!",
       {
-        position:'top-center',
+        position: 'top-center',
+        theme: 'colored',
+        transition: Zoom,
+        draggableDirection: y,
+        autoClose: 3000,
       }
     );
   };
-  
-  const handleSubmit = (event) => { 
+
+  const notifyError = () => {
+    toast.error("Estou vendo que alguém tem problemas para preencher formulários!",
+      {
+        position: 'top-center',
+        theme: 'colored',
+        transition: Zoom,
+        draggableDirection: y,
+        autoClose: 3000,
+      }
+    );
+  };
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-  }; 
+
+    const title = event.target.title.value.trim();
+    const category = event.target.category.value.trim();
+    const author = event.target.author.value.trim();
+    const imgLink = event.target.imgLink.value.trim();
+
+    if (!title || !category || !author || !imgLink) {
+      notifyError();
+    } else {
+      notifySuccess();
+    }
+  };
 
   return (
     <main className={S.mainDonate}>
@@ -37,12 +65,12 @@ function Donate() {
           <h3>Informações do Livro</h3>
         </div>
         <form className={S.formInputs} onSubmit={handleSubmit}>
-          <input className={S.shadowInput} type="text" id="title" placeholder="Título" />
-          <input className={S.shadowInput} type="text" id="category" placeholder="Categoria" />
-          <input className={S.shadowInput} type="text" id="Author" placeholder="Autor" />
-          <input className={S.shadowInput} type="text" id="imgLink" placeholder="Link da imagem" />
-          <button type='submit' className={S.donateBtn} onClick={notify}>Doar</button>
-          <ToastContainer />
+          <input className={S.shadowInput} type="text" id="title" name="title" placeholder="Título" />
+          <input className={S.shadowInput} type="text" id="category" name="category" placeholder="Categoria" />
+          <input className={S.shadowInput} type="text" id="author" name="author" placeholder="Autor" />
+          <input className={S.shadowInput} type="text" id="imgLink" name="imgLink" placeholder="Link da imagem" />
+          <button type='submit' className={S.donateBtn}>Doar</button>
+          <ToastContainer limit={1} />
         </form>
       </section>
     </main>
