@@ -15,16 +15,6 @@
         padding: .2rem;
     }
 
-    .ulFlex {
-        // border: solid #FFF;
-        @include mixins.flex($justify: space-evenly, $align: center);
-        min-width: 50vw;
-        @include mixins.mediaMobile {
-            @include mixins.flex($direction: column, $gap: 2rem);
-            font-size: clamp(2rem, 10vw + 1em, 4rem);
-        }
-    }
-
     .divLogo {
         @include mixins.flex($justify: space-around, $align: center, $gap: 1rem);
 
@@ -36,6 +26,18 @@
         @include mixins.mediaMobile {
             img {
                 width: 2.5rem;
+            }
+        }
+        .wLogo {
+            width: 2vw;
+        }
+        
+        .wLupa {
+            width: 1vw;
+            padding: .1rem;
+        
+            @include mixins.mediaMobile {
+                width: 3vw;
             }
         }
     }
@@ -57,6 +59,17 @@
             background-size: 100% .1rem;
         }
 
+        .ulFlex {
+            // border: solid #FFF;
+            @include mixins.flex($justify: space-evenly, $align: center);
+            min-width: 50vw;
+
+            @include mixins.mediaMobile {
+                @include mixins.flex($direction: column, $gap: 2rem);
+                font-size: clamp(2rem, 10vw + 1em, 4rem);
+            }
+        }
+
         li:hover {
             transform: scale(1.2);
             transition: .2s;
@@ -71,88 +84,92 @@
                 border: none;
                 cursor: pointer;
                 color: color.$text-header;
-                align-self: flex-end ;
+                align-self: flex-end;
             }
         }
 
         @include mixins.mediaMobile {
             display: none;
             padding: 1.5rem;
-            
+
 
             &.menuOpen {
-                display: grid; 
-                position: fixed; 
-                top: 0; 
+                display: grid;
+                position: fixed;
+                top: 0;
                 left: 0;
-                height: 100vh; background-color: color.$bg-footer; 
-                box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
-                z-index: 1000; 
-                padding: 1rem; 
+                height: 100vh;
+                background-color: color.$bg-footer;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                padding: 1rem;
                 gap: 1rem;
             }
         }
-    }
 
-    .divInput {
-        display: flex;
-        align-items: center;
-        border: 2px solid #FFF;
-        border-radius: 50px;
-        overflow: hidden;
+        .divInput {
+            display: flex;
+            align-items: center;
+            border: 2px solid #FFF;
+            border-radius: 50px;
+            overflow: hidden;
 
-        &:active,
-        &:focus,
-        &:hover {
-            box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.771);
-        }
+            .searchSubmt {
+                width: 1.5vw;
+                border-radius: 100px 100px 100px 100px;
+                background-color: transparent;
+                border: solid #FFF .1rem;
+                cursor: pointer;
 
-        .searchSubmt {
-            width: 1.5vw;
-            border-radius: 100px 100px 100px 100px;
-            background-color: transparent;
-            border: solid #FFF .1rem;
-            cursor: pointer;
-            @include mixins.mediaMobile {
-                width: 6vw;
+                @include mixins.mediaMobile {
+                    width: 6vw;
+                }
+            }
+
+            ;
+
+            .searchInput {
+                border-radius: 100px 100px 100px 100px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                width: .05vw;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    width: 15vw;
+                    color: color.$text-header;
+                }
+
+                @include mixins.mediaMobile {
+                    width: 100%;
+
+                    &:hover {
+                        width: 100%;
+                    }
+                }
+
+            }
+
+            ;
+
+            &:active,
+            &:focus,
+            &:hover {
+                box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.771);
             }
         }
     }
-
-    .searchInput {
-        border-radius: 100px 100px 100px 100px;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        width: .05vw;
-        transition: .3s ease-in-out;
-
-        &:hover {
-            width: 15vw;
-            color: color.$text-header;
-        }
-
+    .widthImg {
+        width: 6vw;
+    }
+    
+    #invisible {
+        display: none;
+    
         @include mixins.mediaMobile {
-            width: 100%;
-
-            &:hover{
-                width: 100%;
-            }
+            display: flex;
         }
-
-    }
-}
-
-
-.wLogo {
-    width: 2vw;
-}
-
-.wLupa {
-    width: 1vw;
-    padding: .1rem;
-    @include mixins.mediaMobile {
-        width: 3vw;
     }
 }
 
@@ -162,17 +179,5 @@ input::-webkit-input-placeholder {
 
     @include mixins.mediaMobile {
         margin-left: 0;
-    }
-}
-
-.widthImg{
-    width: 6vw;
-}
-
-#invisible{
-    display: none;
-
-    @include mixins.mediaMobile{
-        display: flex;
     }
 }
