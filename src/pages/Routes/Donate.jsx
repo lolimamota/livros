@@ -12,7 +12,13 @@ import Book from '@assets/routes-img/livro.png'
 
 
 function Donate() {
-  const notify = () => toast("wow deu bom malandro!");
+  const notify = () => {
+    toast.success("É, você conseguiu fazer isso!",
+      {
+        position:'top-center',
+      }
+    );
+  };
   
   const handleSubmit = (event) => { 
     event.preventDefault();
