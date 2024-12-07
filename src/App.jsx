@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import {useState} from 'react';
+import { useState } from 'react';
 import './scss/global.scss';
 
 //IMPORT DE ESTILOS
@@ -31,9 +31,9 @@ function App() {
   return (
     <BrowserRouter>
       <section id={S.styleBrowser}>
-      <div onClick={toggleMenu}>
-        <img className={S.widthImg} id={S.invisible} src={MenuOn} alt="Menu hamburguer" />
-      </div>
+        <div onClick={toggleMenu}>
+          <img className={S.widthImg} id={S.invisible} src={MenuOn} alt="Menu hamburguer" />
+        </div>
         <div className={S.divLogo}>
           <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" className={S.wLogo} />
           <h1>Livros Vai Na Web</h1>
@@ -59,12 +59,12 @@ function App() {
               </Link>
             </li>
           </ul>
-        <form className={S.divInput}>
-          <input type="text" className={S.searchInput} placeholder="O que você procura?" />
-          <button  className={S.searchSubmt}>
-            <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
-          </button>
-        </form>
+          <form className={S.divInput}>
+            <input type="text" className={S.searchInput} placeholder="O que você procura?" />
+            <button className={S.searchSubmt}>
+              <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
+            </button>
+          </form>
         </nav>
       </section>
       <Routes>

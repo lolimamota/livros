@@ -19,6 +19,7 @@
         // border: solid #FFF;
         @include mixins.flex($justify: space-evenly, $align: center);
         min-width: 50vw;
+
         @include mixins.mediaMobile {
             @include mixins.flex($direction: column, $gap: 2rem);
             font-size: clamp(2rem, 10vw + 1em, 4rem);
@@ -71,24 +72,25 @@
                 border: none;
                 cursor: pointer;
                 color: color.$text-header;
-                align-self: flex-end ;
+                align-self: flex-end;
             }
         }
 
         @include mixins.mediaMobile {
             display: none;
             padding: 1.5rem;
-            
+
 
             &.menuOpen {
-                display: grid; 
-                position: fixed; 
-                top: 0; 
+                display: grid;
+                position: fixed;
+                top: 0;
                 left: 0;
-                height: 100vh; background-color: color.$bg-footer; 
-                box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
-                z-index: 1000; 
-                padding: 1rem; 
+                height: 100vh;
+                background-color: color.$bg-footer;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                padding: 1rem;
                 gap: 1rem;
             }
         }
@@ -113,6 +115,7 @@
             background-color: transparent;
             border: solid #FFF .1rem;
             cursor: pointer;
+
             @include mixins.mediaMobile {
                 width: 6vw;
             }
@@ -135,7 +138,7 @@
         @include mixins.mediaMobile {
             width: 100%;
 
-            &:hover{
+            &:hover {
                 width: 100%;
             }
         }
@@ -151,6 +154,7 @@
 .wLupa {
     width: 1vw;
     padding: .1rem;
+
     @include mixins.mediaMobile {
         width: 3vw;
     }
@@ -165,14 +169,14 @@ input::-webkit-input-placeholder {
     }
 }
 
-.widthImg{
+.widthImg {
     width: 6vw;
 }
 
-#invisible{
+#invisible {
     display: none;
 
-    @include mixins.mediaMobile{
+    @include mixins.mediaMobile {
         display: flex;
     }
 }
