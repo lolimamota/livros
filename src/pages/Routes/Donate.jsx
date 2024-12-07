@@ -1,14 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import '../../scss/global.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 //IMPORT STYLE
 import S from '../../scss/styleComponents/routes/donate/donate.module.scss';
 
+//IMPORT IMAGES
 import Book from '@assets/routes-img/livro.png'
 
 
 function Donate() {
+  const notify = () =>toast("wow deu bom malandro!")
   return (
+
     <main className={S.mainDonate}>
       <section>
       <h2>
@@ -25,7 +30,7 @@ function Donate() {
           <input className={S.shadowInput} type="text" id="category" placeholder="Categoria" />
           <input className={S.shadowInput} type="text" id="Author" placeholder="Autor" />
           <input className={S.shadowInput} type="text" id="imgLink" placeholder="Link da imagem" />
-          <button type='submit' className={S.donateBtn}>Doar</button>
+          <button type='submit' className={S.donateBtn} onClick={notify}>Doar</button>
         </form>
       </section>
     </main>
