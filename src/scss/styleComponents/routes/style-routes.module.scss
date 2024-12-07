@@ -28,6 +28,18 @@
                 width: 2.5rem;
             }
         }
+        .wLogo {
+            width: 2vw;
+        }
+        
+        .wLupa {
+            width: 1vw;
+            padding: .1rem;
+        
+            @include mixins.mediaMobile {
+                width: 3vw;
+            }
+        }
     }
 
     .navigation {
