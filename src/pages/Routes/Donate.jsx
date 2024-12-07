@@ -19,7 +19,6 @@ function Donate() {
         position: 'top-center',
         theme: 'colored',
         transition: Zoom,
-        draggableDirection: y,
         autoClose: 3000,
       }
     );
@@ -31,7 +30,6 @@ function Donate() {
         position: 'top-center',
         theme: 'colored',
         transition: Zoom,
-        draggableDirection: y,
         autoClose: 3000,
       }
     );
