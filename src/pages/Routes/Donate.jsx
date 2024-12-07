@@ -1,6 +1,5 @@
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import { Zoom } from 'react-toastify';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
 import '../../scss/global.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,7 +10,6 @@ import S from '../../scss/styleComponents/routes/donate/donate.module.scss';
 import Book from '@assets/routes-img/livro.png'
 
 
-
 function Donate() {
   const notifySuccess = () => {
     toast.success("Parabéns! Você doou um livro!",
@@ -19,7 +17,7 @@ function Donate() {
         position: 'top-center',
         theme: 'colored',
         transition: Zoom,
-        autoClose: 3000,
+        autoClose: 1500,
       }
     );
   };
@@ -30,7 +28,7 @@ function Donate() {
         position: 'top-center',
         theme: 'colored',
         transition: Zoom,
-        autoClose: 3000,
+        autoClose: 5000,
       }
     );
   };
