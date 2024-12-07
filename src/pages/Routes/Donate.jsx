@@ -5,13 +5,20 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //IMPORT STYLE
 import S from '../../scss/styleComponents/routes/donate/donate.module.scss';
-
+// import StyleSheetNotification from '../../scss/styleComponents/notifications/notifications.module.scss';
 //IMPORT IMAGES
 import Book from '@assets/routes-img/livro.png'
 
 
+
 function Donate() {
   const notify = () => toast("wow deu bom malandro!");
+  // const notify = () => toast{
+  //   <StyleSheetNotification />
+  // };
+  const handleSubmit = (event) => { 
+    event.preventDefault();
+  }; 
 
   return (
     <main className={S.mainDonate}>
@@ -25,7 +32,7 @@ function Donate() {
           <img src={Book} alt="Imagem simples de um livro aberto" />
           <h3>Informações do Livro</h3>
         </div>
-        <form className={S.formInputs}>
+        <form className={S.formInputs} onSubmit={handleSubmit}>
           <input className={S.shadowInput} type="text" id="title" placeholder="Título" />
           <input className={S.shadowInput} type="text" id="category" placeholder="Categoria" />
           <input className={S.shadowInput} type="text" id="Author" placeholder="Autor" />
