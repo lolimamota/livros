@@ -32,7 +32,7 @@ function App() {
     <BrowserRouter>
       <section id={S.styleBrowser}>
       <div onClick={toggleMenu}>
-        <img className={S.widthImg} src={MenuOn} alt="Menu hamburguer" />
+        <img className={S.widthImg} id={S.invisible} src={MenuOn} alt="Menu hamburguer" />
       </div>
         <div className={S.divLogo}>
           <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" className={S.wLogo} />

@@ -168,3 +168,11 @@ input::-webkit-input-placeholder {
 .widthImg{
     width: 6vw;
 }
+
+#invisible{
+    display: none;
+
+    @include mixins.mediaMobile{
+        display: flex;
+    }
+}
