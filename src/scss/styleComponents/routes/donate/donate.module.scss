@@ -23,7 +23,8 @@
     };
 
     @include mixins.mediaMobile{
-        @include mixins.flex($align:center, $justify: space-evenly, $direction: column, $gap: 1rem)
+        @include mixins.flex($align:center, $justify: space-evenly, $direction: column, $gap: 1rem);
+        $padding: 1rem;
     }
 }
 
