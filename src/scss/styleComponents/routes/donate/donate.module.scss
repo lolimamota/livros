@@ -5,7 +5,7 @@
 .mainDonate{
     @include mixins.flex($align: center, $justify: space-evenly, $direction: column, $gap: 2vw);
     padding: 2rem;
-    height: 82.8vh;
+    margin: 1.89rem;
 
     img{
         width: 3vw;
@@ -20,6 +20,10 @@
         }
         @include mixins.flex($align:center, $justify: space-evenly, $direction: column);
         text-align: center;
+    };
+
+    @include mixins.mediaMobile{
+        @include mixins.flex($align:center, $justify: space-evenly, $direction: column, $gap: 1rem)
     }
 }
 
@@ -28,7 +32,11 @@
     border-radius: 2rem;
     padding: 2rem;
 
-    @include mixins.flex($align: center, $gap: 5rem, $justify: center, $direction: column)
+    @include mixins.flex($align: center, $gap: 5rem, $justify: center, $direction: column);
+
+    @include mixins.mediaMobile{
+        @include mixins.flex($align: center, $gap: 2rem, $justify: center, $direction: column)
+    }
 }
 
 .divForm{
