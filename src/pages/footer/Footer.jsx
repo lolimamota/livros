@@ -16,7 +16,7 @@ function Footer() {
         <footer className={S.footer}>
             <section className={S.sectionContacts}>
                 <p>4002-8922</p>
-                <picture>
+                <figure>
                     <ul className={S.ulFlex}>
                         <li>
                             <a href="https://www.facebook.com/vainaweb">
@@ -44,7 +44,7 @@ function Footer() {
                             </a>
                         </li>
                     </ul>
-                </picture>
+                </figure>
             </section>
             <section className={S.copyright}>
                 <p>
