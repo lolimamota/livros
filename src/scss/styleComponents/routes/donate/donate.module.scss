@@ -5,7 +5,7 @@
 .mainDonate{
     @include mixins.flex($align: center, $justify: space-evenly, $direction: column, $gap: 2vw);
     padding: 2rem;
-    height: 78.8vh;
+    height: 82.8vh;
 
     img{
         width: 3vw;
