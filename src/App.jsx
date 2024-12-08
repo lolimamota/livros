@@ -23,10 +23,20 @@ import Footer from './pages/footer/Footer.jsx';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inputExpanded, setInputExpanded] = useState(false);
+
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
-  const closeMenu = () => { setMenuOpen(false); };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const expandInput = () => {
+    setInputExpanded(!inputExpanded)
+  }
 
   return (
     <BrowserRouter>
@@ -60,8 +70,8 @@ function App() {
             </li>
           </ul>
           <form className={S.divInput}>
-            <input type="text" className={S.searchInput} placeholder="O que você procura?" />
-            <button className={S.searchSubmt}>
+            <input type="text" className={`${S.searchInput} ${inputExpanded ? S.expanded : ''}`} placeholder="O que você procura?" onClick={expandInput} />
+            <button type="button" className={S.searchSubmt} onClick={expandInput}>
               <img src={Lupa} alt="Imagem de uma lupa, indicando o campo de busca do site" className={S.wLupa} />
             </button>
           </form>
