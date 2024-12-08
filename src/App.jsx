@@ -48,7 +48,7 @@ function App() {
           <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" className={S.wLogo} />
           <h1>Livros Vai Na Web</h1>
         </div>
-        <nav className={`${S.navigation} ${menuOpen ? S.menuOpen : ''}`}>
+        <nav className={`${S.navigation} ${menuOpen ? S.menuOpen : S.menuClosed}`}>
           <button className={S.closeBtnMenu} onClick={closeMenu}>
             <img className={S.widthImg} src={MenuOff} alt="X para fechar o menu" />
           </button>

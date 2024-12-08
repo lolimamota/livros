@@ -60,6 +60,14 @@
             transition: .2s;
         }
 
+        &.menuOpen { 
+            transform: translateX(-1%);
+        };
+
+        &.menuClosed { 
+            transform: translateX(0%);
+        }
+
         .closeBtnMenu {
             display: none;
 
@@ -72,6 +80,7 @@
                 align-self: flex-end;
             }
         }
+        transition: transform 10s ease;
 
         @include mixins.mediaMobile {
             display: none;
