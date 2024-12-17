@@ -46,7 +46,7 @@ footer{
     }
 
     figure{
-        @include mixins.flex($justify: center, $align: center);
+        @include mixins.flex($align: center);
         padding: 1rem;
     }
 }
