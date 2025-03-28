@@ -19,7 +19,7 @@ function Donate() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [category, setCategory] = useState("");
-  const [url, setUrl] = useState("");
+  const [image_url, setUrl] = useState("");
 
   // estruturar o envio dos dados
   const sendData = async()=>{
@@ -29,7 +29,7 @@ function Donate() {
       title,
       author,
       category,
-      url
+      image_url
     }
     
     try {
@@ -124,7 +124,7 @@ function Donate() {
           <input className={S.shadowInput} type="text" id="title" name="title" placeholder="Título" onChange={capTitle} value={title}/>
           <input className={S.shadowInput} type="text" id="category" name="category" placeholder="Categoria" onChange={capCategory} value={category}/>
           <input className={S.shadowInput} type="text" id="author" name="author" placeholder="Autor" onChange={capAuthor} value={author}/>
-          <input className={S.shadowInput} type="text" id="imgLink" name="imgLink" placeholder="Link da imagem" onChange={capUrl} value={url}/>
+          <input className={S.shadowInput} type="text" id="imgLink" name="imgLink" placeholder="Link da imagem" onChange={capUrl} value={image_url}/>
           <button type='submit' className={S.donateBtn} onClick={sendData}>Doar</button>
           <ToastContainer limit={1} />
         </form>
