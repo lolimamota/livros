@@ -55,8 +55,9 @@ export default function ShowBook() {
                                 <img src={Edit} alt="Imagem de um lápis onde se pode clicar para editar o livro" />
                                 Editar
                             </button>
-                            <button className={S.btnDonated}>
-                                <img src={Delete} alt="Imagem de uma lixeira onde se pode clicar para deletar o livro" /> Excluir
+                            <button className={S.btnDonated} onClick={() => deleteLivro(book.id)} >
+                                <img src={Delete}
+                                alt="Imagem de uma lixeira onde se pode clicar para deletar o livro" /> Excluir
                             </button>
                         </div>
                     </article>
