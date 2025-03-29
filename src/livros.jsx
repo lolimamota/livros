@@ -6,12 +6,13 @@ import S from './scss/styleComponents/routes/donated-book/donatedbook.module.scs
 
 export default function ShowBook() {
     const [book, setBook] = useState([]);
-    const getLivros = async () => {
-        try {
-            const response = await axios.get("https://openlibrary.org/subjects/romance.json?limit=5");
 
-            console.log(response.data);
-            setBook(response.data.works);
+    const getLivros = async () => {
+        const urlAPI = "https://api-livros-wtvn.onrender.com/donate";
+
+        try {
+            const response = await axios.get(urlAPI);
+            setBook(response.data);
         }
         catch (error) {
             console.error("Erro ao buscar os dados:", error);
@@ -25,26 +26,7 @@ export default function ShowBook() {
 
     return (
         <section className={S.sectionDonated}>
-            {book.map((book) => (
-                <a href={`https://openlibrary.org${book.key}`} key={book.key} target="_blank" rel="noopener noreferrer">
-                    <img src={`https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`} alt={book.title} />
-                    <div>
-                        <div>
-                            <h4>
-                                {book.title}
-                            </h4>
-                            {book.authors
-                                && book.authors.length > 0
-                                && (
-                                    <h5>
-                                        {book.authors.map(author => author.name).join(", ")}
-                                    </h5>
-
-                                )}
-                        </div>
-                    </div>
-                </a>
-            ))}
+            
         </section>
     )
 }
