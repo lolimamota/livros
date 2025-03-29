@@ -35,9 +35,10 @@ function Donate() {
     try {
       const sendAPI = await axios.post(urlAPI, dataTo);
       console.log("Dados enviados com sucesso:", sendAPI.data);
+      getLivros();
     } catch (error) {
       console.error("Erro ao enviar dados:", error);
-    }
+    };
   }
 
   // cap == capturar dados
