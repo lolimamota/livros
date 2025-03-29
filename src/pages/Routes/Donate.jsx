@@ -23,7 +23,7 @@ function Donate() {
 
   // estruturar o envio dos dados
   const sendData = async()=>{
-    const urlAPI = "api-livros-wtvn.onrender.com/donate"
+    const urlAPI = "api-livros-wtvn.onrender.com/donated"
 
     const dataTo = {
       title,
