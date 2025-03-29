@@ -29,7 +29,7 @@
 }
 
 .cardForm{
-    border: solid color.$text-h3;
+    border: solid color.$border;
     border-radius: 2rem;
     padding: 2rem;
 
@@ -50,7 +50,7 @@
     @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 3rem);
 
     input{
-        border: solid color.$text-h3;
+        border: solid color.$border;
         border-radius: .5rem;
         width: 20vw;
         height: 2rem;
