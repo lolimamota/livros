@@ -1,4 +1,4 @@
-import {React, useEffect, useState } from 'react';
+import {React, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { Zoom } from 'react-toastify';
 import '../../scss/global.scss';
@@ -10,7 +10,7 @@ import S from '../../scss/styleComponents/routes/donate/donate.module.scss';
 
 //IMPORT IMAGES
 import Book from '@assets/routes-img/livro.png'
-import { use } from 'react';
+
 
 
 
@@ -38,11 +38,7 @@ function Donate() {
     } catch (error) {
       console.error("Erro ao enviar dados:", error);
     }
-  
-    
   }
-
-
 
   // cap == capturar dados
 
