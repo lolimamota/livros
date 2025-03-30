@@ -3,6 +3,7 @@
 
 .sectionDonated {
     @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 2rem);
+    height: 80.2vh;
 
     img {
         width: 15rem;
