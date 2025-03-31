@@ -27,6 +27,7 @@ footer{
             @include mixins.flex($justify: space-evenly, $align: center, $gap: 1rem);
 
             @include mixins.mediaMobile{
+                width: 100%;
                 @include mixins.flex(
                     $justify: center,
                     $align: center,
