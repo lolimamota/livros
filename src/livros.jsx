@@ -22,17 +22,17 @@ export default function ShowBook() {
         }
     };
 
-    const deleteLivro = async (id) => {
-        const urlAPI = `https://api-livros-wtvn.onrender.com/donatedBooks/${id}`;
+    // const deleteLivro = async (id) => {
+    //     const urlAPI = `https://api-livros-wtvn.onrender.com/donatedBooks/${id}`;
 
-        try {
-            await axios.delete(urlAPI); // Envia a requisição DELETE para a API
-            setBook(book.filter((item) => item.id !== id)); // Atualiza o estado para remover o livro excluído
-            console.log(`${id} - Este livro nos deu adeus!`);
-        } catch (error) {
-            console.error("Temos certeza que este livro ainda está aqui!", error);
-        }
-    };
+    //     try {
+    //         await axios.delete(urlAPI); // Envia a requisição DELETE para a API
+    //         setBook(book.filter((item) => item.id !== id)); // Atualiza o estado para remover o livro excluído
+    //         console.log(`${id} - Este livro nos deu adeus!`);
+    //     } catch (error) {
+    //         console.error("Temos certeza que este livro ainda está aqui!", error);
+    //     }
+    // };
 
 
     useEffect(() => {
@@ -50,16 +50,16 @@ export default function ShowBook() {
                         <h3>{book.title}</h3>
                         <h4>{book.author}</h4>
                         <h5>{book.category}</h5>
-                        <div className={S.divBtnDonated}>
-                            <button className={S.btnDonated}>
+                        {/* <div className={S.divBtnDonated}>
+                             <button className={S.btnDonated}>
                                 <img src={Edit} alt="Imagem de um lápis onde se pode clicar para editar o livro" />
                                 Editar
                             </button>
                             <button className={S.btnDonated} onClick={() => deleteLivro(book.id)} >
                                 <img src={Delete}
                                 alt="Imagem de uma lixeira onde se pode clicar para deletar o livro" /> Excluir
-                            </button>
-                        </div>
+                            </button> 
+                        </div> */}
                     </article>
                 ))
                 }

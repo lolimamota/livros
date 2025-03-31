@@ -11,36 +11,46 @@
         &:hover {
             box-shadow: 5px 5px 10px color.$text-h3;
         }
-    }
 
-    .divBtnDonated {
-        .btnDonated {
-            @include mixins.flex($align: center, $justify: center);
-            cursor: pointer;
-            border: solid color.$border;
-            background: none;
-            border-radius: .5rem;
-            color: color.$text-h3;
-            padding: .1rem;
-
-            img {
-                width: 1.5rem;
-            }
+        @include mixins.mediaMobile {
+            @include mixins.flex($align: center, $justify: center, $direction: column);
         }
-
-        @include mixins.flex($align: center,
-            $justify: center,
-            $gap: 1rem);
-
     }
+
+    // .divBtnDonated {
+    //     .btnDonated {
+    //         @include mixins.flex($align: center, $justify: center);
+    //         cursor: pointer;
+    //         border: solid color.$border;
+    //         background: none;
+    //         border-radius: .5rem;
+    //         color: color.$text-h3;
+    //         padding: .1rem;
+
+    //         img {
+    //             width: 1.5rem;
+    //         }
+    //     }
+
+    //     @include mixins.flex($align: center,
+    //         $justify: center,
+    //         $gap: 1rem);
+
+    // }
 
     .divDonated {
         @include mixins.flex($align: center, $justify: center, $gap: 2rem);
+
+        @include mixins.mediaMobile {
+            overflow-x: hidden;
+            @include mixins.flex($align: center, $justify: center, $direction: column);
+        }
     }
 
     .articleDonated {
         @include mixins.flex($align: center, $justify: center, $gap: .5rem, $direction: column);
         padding: 2rem;
+
         &:hover {
             transform: scale(1.1);
         }
