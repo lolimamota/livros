@@ -39,7 +39,10 @@
     // }
 
     .divDonated {
-        @include mixins.flex($align: center, $justify: center, $gap: 2rem);
+        @include mixins.flex($align: center, $justify: center, $gap: 5rem);
+        flex-wrap: wrap;
+        overflow-y: scroll;
+
 
         @include mixins.mediaMobile {
             overflow-x: hidden;
