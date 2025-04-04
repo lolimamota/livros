@@ -17,26 +17,26 @@
         }
     }
 
-    // .divBtnDonated {
-    //     .btnDonated {
-    //         @include mixins.flex($align: center, $justify: center);
-    //         cursor: pointer;
-    //         border: solid color.$border;
-    //         background: none;
-    //         border-radius: .5rem;
-    //         color: color.$text-h3;
-    //         padding: .1rem;
+    .divBtnDonated {
+        .btnDonated {
+            @include mixins.flex($align: center, $justify: center);
+            cursor: pointer;
+            border: solid color.$border;
+            background: none;
+            border-radius: .5rem;
+            color: color.$text-h3;
+            padding: .1rem;
 
-    //         img {
-    //             width: 1.5rem;
-    //         }
-    //     }
+            img {
+                width: 1.5rem;
+            }
+        }
 
-    //     @include mixins.flex($align: center,
-    //         $justify: center,
-    //         $gap: 1rem);
+        @include mixins.flex($align: center,
+            $justify: center,
+            $gap: 1rem);
 
-    // }
+    }
 
     .divDonated {
         @include mixins.flex($align: center, $justify: center, $gap: 5rem);
