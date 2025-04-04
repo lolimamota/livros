@@ -42,7 +42,9 @@ export default function ShowBook() {
 
     return (
         <section className={S.sectionDonated}>
-            <h2>Livros doados</h2>
+            <div className={S.divH2}>
+                <h2>Livros doados</h2>
+            </div>
             <div className={S.divDonated}>
                 {book.map((book) => (
                     <article key={book.id} className={S.articleDonated}>
