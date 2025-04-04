@@ -2,8 +2,8 @@
 @use '../../../mixins/mixins.module.scss' as mixins;
 
 .sectionDonated {
-    @include mixins.flex($align: center, $justify: center, $direction: column, $gap: 2rem);
-    height: 80.2vh;
+    @include mixins.flex($align: center, $justify: center, $direction: column);
+    height: 80vh;
 
     img {
         width: 10rem;
@@ -16,7 +16,7 @@
     .divH2{
         height: 10vh;
         text-align: center;
-        padding-top: 1rem;
+        padding: 1rem;
     }
 
     .divBtnDonated {
