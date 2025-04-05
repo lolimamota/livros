@@ -39,19 +39,29 @@ export default function ShowBook() {
 
     const updateLivro = async (id) => {
         const urlAPI = `https://api-livros-wtvn.onrender.com/update/${id}`;
-
         try {
             await axios.put(urlAPI, livroAtual);
-            setBook(book.map((item) => (item.id === id ? { ...item, ...livroAtual } : item)));
-            setEditForm(false)
+            setBook(
+                book.map((item) => {
+                    if (item.id === id) {
+                        return {
+                            ...item, // Mantém todas as propriedades do livro original
+                            ...livroAtual // Sobrescreve com os dados atualizados
+                        };
+                    } else {
+                        return item; // Retorna os itens não modificados sem alteração
+                    }
+                })
+            );
+            setEditForm(false);
         } catch (error) {
             console.error(`É apenas mais do mesmo, o ${id} não foi atualizado!`, error);
         }
-    }
+    };
 
     const mostrarForm = (book) => {
-        setLivroAtual(book),
-            setEditForm(true)
+        setLivroAtual(book);
+        setEditForm(true);
     }
 
 
@@ -117,8 +127,6 @@ export default function ShowBook() {
                         </article>
                     ))}
                 </div>
-
-                {/* Formulário suspenso para edição */}
                 {editForm && (
                     <div className={S.editForm}>
                         <form
