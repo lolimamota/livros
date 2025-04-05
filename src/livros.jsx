@@ -23,7 +23,7 @@ export default function ShowBook() {
     };
 
     const deleteLivro = async (id) => {
-        const urlAPI = `https://api-livros-wtvn.onrender.com/donatedBooks/${id}`;
+        const urlAPI = `https://api-livros-wtvn.onrender.com/delete/${id}`;
 
         try {
             await axios.delete(urlAPI); // Envia a requisição DELETE para a API
@@ -33,6 +33,17 @@ export default function ShowBook() {
             console.error("Temos certeza que este livro ainda está aqui!", error);
         }
     };
+
+    const updateLivro = async(id) => {
+        const urlAPI = `https://api-livros-wtvn.onrender.com/update/${id}`;
+
+        try{
+            await axios.put(urlAPI);
+            setBook(book.filter((item) => item.id !== id));
+        } catch(error){
+            console.error(`É apenas mais do mesmo, o ${id} não foi atualizado!`, error);
+        }
+    }
 
 
     useEffect(() => {
@@ -53,7 +64,7 @@ export default function ShowBook() {
                         <h4>{book.author}</h4>
                         <h5>{book.category}</h5>
                         <div className={S.divBtnDonated}>
-                            {/* <button className={S.btnDonated}>
+                            {/* <button className={S.btnDonated} onClick={() => updateLivro(book.id)} >
                                 <img src={Edit} alt="Imagem de um lápis onde se pode clicar para editar o livro" />
                                 Editar
                             </button> */}
