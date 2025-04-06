@@ -73,7 +73,7 @@ export default function ShowBook() {
     return (
         <section className={S.sectionDonated}>
             <div className={S.divH2}>
-                <h2>Livros doados</h2>
+                <h2 className={S.h2Donated}>Livros doados</h2>
             </div>
             <div className={S.divDonated}>
                 {book.map((book) => (
@@ -98,14 +98,16 @@ export default function ShowBook() {
             </div>
             {editForm && (
                 <div className={S.editForm}>
-                    <form
+                    <form className={S.formStyle}
                         onSubmit={(e) => {
                             e.preventDefault();
                             updateLivro(livroAtual.id); // Chamando a função com os dados atualizados
                         }}
                     >
                         <label>
-                            Título:
+                            <h3>
+                                Título:
+                            </h3>
                             <input
                                 type="text"
                                 value={livroAtual.title || ""}
@@ -115,7 +117,9 @@ export default function ShowBook() {
                             />
                         </label>
                         <label>
-                            Autor:
+                            <h3>
+                                Autor:
+                            </h3>
                             <input
                                 type="text"
                                 value={livroAtual.author || ""}
@@ -125,7 +129,9 @@ export default function ShowBook() {
                             />
                         </label>
                         <label>
-                            Categoria:
+                            <h3>
+                                Categoria:
+                            </h3>
                             <input
                                 type="text"
                                 value={livroAtual.category || ""}
@@ -135,7 +141,9 @@ export default function ShowBook() {
                             />
                         </label>
                         <label>
-                            Url do livro:
+                            <h3>
+                                Url do livro:
+                            </h3>
                             <input
                                 type="text"
                                 value={livroAtual.image_url || ""}
@@ -144,10 +152,14 @@ export default function ShowBook() {
                                 }
                             />
                         </label>
-                        <button type="submit">Salvar alterações</button>
-                        <button type="button" onClick={() => setEditForm(false)}>
-                            Cancelar
+                        <div className={S.divBtnDonated}>
+                        <button className={S.btnDonated} type="submit">
+                                Confirmar alterações
                         </button>
+                        <button className={S.btnDonated} type="button" onClick={() => setEditForm(false)}>
+                                Cancelar alterações
+                        </button>
+                        </div>
                     </form>
                 </div>
             )}

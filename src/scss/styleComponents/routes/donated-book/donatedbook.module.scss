@@ -57,7 +57,7 @@
         padding: 2rem;
         border: solid color.$border;
         border-radius: 5rem;
-        width: 15vw;
+        width: 20vw;
         height: 40vh;
         text-align: center;
 
@@ -65,6 +65,14 @@
             transform: scale(1.1);
             box-shadow: 5px 5px 10px color.$text-h3;
         }
+    }
+
+    .h2Donated {
+            background-image: linear-gradient(color.$bg-header);
+            background-size: 0% .1rem;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            transition: background-size .3s ease-in-out;
     }
 }
 
@@ -77,4 +85,26 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    border: solid color.$text-h3;
+    padding: 10vw;
+}
+
+.formStyle{
+    @include mixins.flex(
+        $direction: column,
+        $gap: 2vh
+    );
+
+    label{
+        color: color.$text-h3;
+
+        input{
+            width: 30vw;
+            border: solid color.$text-h3;
+            color: color.$text-h3;
+            border-radius: 5px;
+            padding-left: .2vw;
+        }
+    }
+
 }
