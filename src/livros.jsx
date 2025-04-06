@@ -134,7 +134,16 @@ export default function ShowBook() {
                                 }
                             />
                         </label>
-
+                        <label>
+                            Url do livro:
+                            <input
+                                type="text"
+                                value={livroAtual.image_url || ""}
+                                onChange={(e) =>
+                                    setLivroAtual({ ...livroAtual, image_url: e.target.value })
+                                }
+                            />
+                        </label>
                         <button type="submit">Salvar alterações</button>
                         <button type="button" onClick={() => setEditForm(false)}>
                             Cancelar
