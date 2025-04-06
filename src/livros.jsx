@@ -78,7 +78,7 @@ export default function ShowBook() {
             <div className={S.divDonated}>
                 {book.map((book) => (
                     <article key={book.id} className={S.articleDonated}>
-                        <img src={book.image_url} alt={book.title} />
+                        <img src={book.image_url} alt={`Capa do livro: ${book.title}`} />
                         <h3>{book.title}</h3>
                         <h4>{book.author}</h4>
                         <h5>{book.category}</h5>
@@ -134,6 +134,7 @@ export default function ShowBook() {
                                 }
                             />
                         </label>
+
                         <button type="submit">Salvar alterações</button>
                         <button type="button" onClick={() => setEditForm(false)}>
                             Cancelar
