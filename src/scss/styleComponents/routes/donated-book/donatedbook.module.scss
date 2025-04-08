@@ -44,14 +44,14 @@
         @include mixins.flex($align: center, $justify: center, $gap: 5rem);
         flex-wrap: wrap;
         overflow-y: scroll;
-
-
+        padding: 1.5rem; // Adicionar padding para dar espaço aos cards durante o hover
+    
         @include mixins.mediaMobile {
             overflow-x: hidden;
             @include mixins.flex($align: center, $justify: center, $direction: column);
         }
     }
-
+    
     .articleDonated {
         @include mixins.flex($align: center, $justify: center, $gap: .5rem, $direction: column);
         padding: 2rem;
@@ -60,10 +60,15 @@
         width: 20vw;
         height: 40vh;
         text-align: center;
-
+        transition: transform 0.3s ease, box-shadow 0.3s ease; // Adicionar transição para box-shadow também
+        margin: 1rem; // Adicionar margem para dar espaço ao efeito hover
+        position: relative; // Posicionamento relativo para controlar z-index
+        z-index: 1; // Z-index padrão
+    
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.03); 
             box-shadow: 5px 5px 10px color.$text-h3;
+            z-index: 2; // Aumentar z-index durante hover para ficar acima dos outros cards
         }
     }
 
