@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "../src/scss/global.scss";
 
@@ -15,9 +16,15 @@ import Edit from './assets/routes-img/edit.png';
 export default function ShowBook() {
     // Estados
     const [books, setBooks] = useState([]);
+    const [filteredBooks, setFilteredBooks] = useState([]);
     const [editForm, setEditForm] = useState(false);
     const [livroAtual, setLivroAtual] = useState({});
     const [loading, setLoading] = useState(false);
+    
+    // Usar location para obter parâmetros da URL
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get('search') || '';
 
     // Funções para o toastify
     // Para o botão deletar:
@@ -86,7 +93,9 @@ export default function ShowBook() {
 
         try {
             await axios.delete(urlAPI);
-            setBooks(books.filter((item) => item.id !== id));
+            const updatedBooks = books.filter((item) => item.id !== id);
+            setBooks(updatedBooks);
+            filterBooks(updatedBooks, searchQuery);
             console.log(`${id} - "${title}" foi removido com sucesso!`);
             notifySuccessDel(id, title);
         } catch (error) {
@@ -103,9 +112,11 @@ export default function ShowBook() {
 
         try {
             await axios.put(urlAPI, livroAtual);
-            setBooks(
-                books.map((item) => item.id === id ? { ...item, ...livroAtual } : item)
+            const updatedBooks = books.map((item) => 
+                item.id === id ? { ...item, ...livroAtual } : item
             );
+            setBooks(updatedBooks);
+            filterBooks(updatedBooks, searchQuery);
             setEditForm(false);
             notifySucessUpd(id, livroAtual.title);
         } catch (error) {
@@ -121,16 +132,50 @@ export default function ShowBook() {
         setEditForm(true);
     };
 
+    // Função para filtrar livros com base na busca
+    const filterBooks = (booksArray, query) => {
+        if (!query) {
+            setFilteredBooks(booksArray);
+            return;
+        }
+        
+        const filtered = booksArray.filter(book => 
+            book.title.toLowerCase().includes(query.toLowerCase()) ||
+            book.author.toLowerCase().includes(query.toLowerCase()) ||
+            book.category.toLowerCase().includes(query.toLowerCase())
+        );
+        
+        setFilteredBooks(filtered);
+        
+        if (filtered.length === 0 && booksArray.length > 0) {
+            toast.info(`Nenhum livro encontrado para "${query}"`, {
+                position: 'top-center',
+                theme: 'colored',
+                transition: Zoom,
+                autoClose: 3000,
+            });
+        }
+    };
+
     useEffect(() => {
         getLivros();
     }, []);
+
+    // Filtrar livros quando books ou searchQuery mudam
+    useEffect(() => {
+        filterBooks(books, searchQuery);
+    }, [books, searchQuery]);
+
+    const displayBooks = filteredBooks.length > 0 || searchQuery ? filteredBooks : books;
 
     return (
         <>
             <ToastContainer limit={3} />
             <section className={S.sectionDonated}>
                 <div className={S.divH2}>
-                    <h2 className={S.h2Donated}>Livros doados</h2>
+                    <h2 className={S.h2Donated}>
+                        {searchQuery ? `Resultados para "${searchQuery}"` : "Livros doados"}
+                    </h2>
                 </div>
                 
                 {loading && (
@@ -140,10 +185,10 @@ export default function ShowBook() {
                 )}
                 
                 <div className={S.divDonated}>
-                    {books.length === 0 && !loading ? (
+                    {displayBooks.length === 0 && !loading ? (
                         <p className={S.emptyMessage}>Nenhum livro encontrado.</p>
                     ) : (
-                        books.map((book) => (
+                        displayBooks.map((book) => (
                             <article key={book.id} className={S.articleDonated}>
                                 <img 
                                     src={book.image_url} 
