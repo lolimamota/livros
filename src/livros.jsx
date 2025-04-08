@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import S from './scss/styleComponents/routes/donated-book/donatedbook.module.scss';
 import Delete from './assets/routes-img/delete.png';
 import Edit from './assets/routes-img/edit.png';
+import loadingGif from './assets/routes-img/loading.gif';
 
 export default function ShowBook() {
     // Estados
@@ -180,7 +181,7 @@ export default function ShowBook() {
                 
                 {loading && (
                     <div className={S.loading}>
-                        <p>Carregando...</p>
+                        <img src={loadingGif} alt="Carregando..." />
                     </div>
                 )}
                 

@@ -92,6 +92,8 @@
     border-radius: 10px;
     border: solid color.$text-h3;
     padding: 10vw;
+    z-index: 9999; // Z-index alto para garantir que o modal fique acima de outros elementos
+    width: 50vw; // Largura do modal
 }
 
 .formStyle{
