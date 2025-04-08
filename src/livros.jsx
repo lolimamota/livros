@@ -1,168 +1,263 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "../src/scss/global.scss";
+
+//import do react-toastify
+import { ToastContainer, toast } from 'react-toastify';
+import { Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // IMPORTS DE ESTILO E DE IMAGEM
 import S from './scss/styleComponents/routes/donated-book/donatedbook.module.scss';
 import Delete from './assets/routes-img/delete.png';
-import Edit from './assets/routes-img/edit.png'
+import Edit from './assets/routes-img/edit.png';
 
 export default function ShowBook() {
-    const [book, setBook] = useState([]);
+    // Estados
+    const [books, setBooks] = useState([]);
+    const [editForm, setEditForm] = useState(false);
+    const [livroAtual, setLivroAtual] = useState({});
+    const [loading, setLoading] = useState(false);
 
-    const [editForm, setEditForm] = useState(false)
-    const [livroAtual, setLivroAtual] = useState({})
+    // Funções para o toastify
+    // Para o botão deletar:
+    const notifySuccessDel = (bookId, title) => {
+        toast.success(`${bookId} - "${title}" foi removido com sucesso!`, {
+            position: 'top-center',
+            theme: 'colored',
+            transition: Zoom,
+            autoClose: 3000,
+        });
+    };
 
+    const notifyErrorDel = (bookId, title) => {
+        toast.error(`${bookId} - Não foi possível remover "${title}"!`, {
+            position: 'top-center',
+            theme: 'colored',
+            transition: Zoom,
+            autoClose: 3000,
+        });
+    };
+
+    // Para o botão salvar alterações
+    const notifySucessUpd = (bookId, title) => {
+        toast.success(`${bookId} - "${title}" foi atualizado com sucesso!`, {
+            position: 'top-center',
+            theme: 'colored',
+            transition: Zoom,
+            autoClose: 3000,
+        });
+    };
+
+    const notifyErrorUpd = (bookId, title) => {
+        toast.error(`Não foi possível atualizar "${title}" (ID: ${bookId})!`, {
+            position: 'top-center',
+            theme: 'colored',
+            transition: Zoom,
+            autoClose: 3000,
+        });
+    };
+
+    // Funções da API
     const getLivros = async () => {
         const urlAPI = "https://api-livros-wtvn.onrender.com/donatedBooks";
+        setLoading(true);
 
         try {
             const response = await axios.get(urlAPI);
-            setBook(response.data);
-        }
-        catch (error) {
+            setBooks(response.data);
+        } catch (error) {
             console.error("Erro ao buscar os dados:", error);
+            toast.error("Não foi possível carregar os livros. Tente novamente mais tarde.", {
+                position: 'top-center',
+                theme: 'colored',
+                transition: Zoom,
+                autoClose: 3000,
+            });
+        } finally {
+            setLoading(false);
         }
     };
 
-    const deleteLivro = async (id) => {
+    const deleteLivro = async (book) => {
+        const { id, title } = book;
         const urlAPI = `https://api-livros-wtvn.onrender.com/delete/${id}`;
+        setLoading(true);
 
         try {
-            await axios.delete(urlAPI); // Envia a requisição DELETE para a API
-            setBook(book.filter((item) => item.id !== id)); // Atualiza o estado para remover o livro excluído
-            console.log(`${id} - Este livro nos deu adeus!`);
+            await axios.delete(urlAPI);
+            setBooks(books.filter((item) => item.id !== id));
+            console.log(`${id} - "${title}" foi removido com sucesso!`);
+            notifySuccessDel(id, title);
         } catch (error) {
-            console.error("Temos certeza que este livro ainda está aqui!", error);
+            console.error(`Erro ao deletar livro ${id}:`, error);
+            notifyErrorDel(id, title);
+        } finally {
+            setLoading(false);
         }
     };
 
     const updateLivro = async (id) => {
         const urlAPI = `https://api-livros-wtvn.onrender.com/update/${id}`;
+        setLoading(true);
+
         try {
             await axios.put(urlAPI, livroAtual);
-            setBook(
-                book.map((item) => {
-                    if (item.id === id) {
-                        return {
-                            ...item, // Mantém todas as propriedades do livro original
-                            ...livroAtual // Sobrescreve com os dados atualizados
-                        };
-                    } else {
-                        return item; // Retorna os itens não modificados sem alteração
-                    }
-                })
+            setBooks(
+                books.map((item) => item.id === id ? { ...item, ...livroAtual } : item)
             );
             setEditForm(false);
+            notifySucessUpd(id, livroAtual.title);
         } catch (error) {
-            console.error(`É apenas mais do mesmo, o ${id} não foi atualizado!`, error);
+            console.error(`Erro ao atualizar livro ${id}:`, error);
+            notifyErrorUpd(id, livroAtual.title);
+        } finally {
+            setLoading(false);
         }
     };
 
     const mostrarForm = (book) => {
         setLivroAtual(book);
         setEditForm(true);
-    }
-
+    };
 
     useEffect(() => {
         getLivros();
-    },
-        []);
+    }, []);
 
     return (
-        <section className={S.sectionDonated}>
-            <div className={S.divH2}>
-                <h2 className={S.h2Donated}>Livros doados</h2>
-            </div>
-            <div className={S.divDonated}>
-                {book.map((book) => (
-                    <article key={book.id} className={S.articleDonated}>
-                        <img src={book.image_url} alt={`Capa do livro: ${book.title}`} />
-                        <h3>{book.title}</h3>
-                        <h4>{book.author}</h4>
-                        <h5>{book.category}</h5>
-                        <div className={S.divBtnDonated}>
-                            <button className={S.btnDonated} onClick={() => mostrarForm(book)} >
-                                <img src={Edit} alt="Imagem de um lápis onde se pode clicar para editar o livro" />
-                                Editar
-                            </button>
-                            <button className={S.btnDonated} onClick={() => deleteLivro(book.id)} >
-                                <img src={Delete}
-                                    alt="Imagem de uma lixeira onde se pode clicar para deletar o livro" /> Excluir
-                            </button>
-                        </div>
-                    </article>
-                ))
-                }
-            </div>
-            {editForm && (
-                <div className={S.editForm}>
-                    <form className={S.formStyle}
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                            updateLivro(livroAtual.id); // Chamando a função com os dados atualizados
-                        }}
-                    >
-                        <label>
-                            <h3>
-                                Título:
-                            </h3>
-                            <input
-                                type="text"
-                                value={livroAtual.title || ""}
-                                onChange={(e) =>
-                                    setLivroAtual({ ...livroAtual, title: e.target.value })
-                                }
-                            />
-                        </label>
-                        <label>
-                            <h3>
-                                Autor:
-                            </h3>
-                            <input
-                                type="text"
-                                value={livroAtual.author || ""}
-                                onChange={(e) =>
-                                    setLivroAtual({ ...livroAtual, author: e.target.value })
-                                }
-                            />
-                        </label>
-                        <label>
-                            <h3>
-                                Categoria:
-                            </h3>
-                            <input
-                                type="text"
-                                value={livroAtual.category || ""}
-                                onChange={(e) =>
-                                    setLivroAtual({ ...livroAtual, category: e.target.value })
-                                }
-                            />
-                        </label>
-                        <label>
-                            <h3>
-                                Url do livro:
-                            </h3>
-                            <input
-                                type="text"
-                                value={livroAtual.image_url || ""}
-                                onChange={(e) =>
-                                    setLivroAtual({ ...livroAtual, image_url: e.target.value })
-                                }
-                            />
-                        </label>
-                        <div className={S.divBtnDonated}>
-                        <button className={S.btnDonated} type="submit">
-                                Confirmar alterações
-                        </button>
-                        <button className={S.btnDonated} type="button" onClick={() => setEditForm(false)}>
-                                Cancelar alterações
-                        </button>
-                        </div>
-                    </form>
+        <>
+            <ToastContainer limit={3} />
+            <section className={S.sectionDonated}>
+                <div className={S.divH2}>
+                    <h2 className={S.h2Donated}>Livros doados</h2>
                 </div>
-            )}
-        </section>
+                
+                {loading && (
+                    <div className={S.loading}>
+                        <p>Carregando...</p>
+                    </div>
+                )}
+                
+                <div className={S.divDonated}>
+                    {books.length === 0 && !loading ? (
+                        <p className={S.emptyMessage}>Nenhum livro encontrado.</p>
+                    ) : (
+                        books.map((book) => (
+                            <article key={book.id} className={S.articleDonated}>
+                                <img 
+                                    src={book.image_url} 
+                                    alt={`Capa do livro: ${book.title}`} 
+                                    onError={(e) => {
+                                        e.target.src = "https://via.placeholder.com/150x200?text=Sem+Imagem";
+                                    }}
+                                />
+                                <h3>{book.title}</h3>
+                                <h4>{book.author}</h4>
+                                <h5>{book.category}</h5>
+                                <div className={S.divBtnDonated}>
+                                    <button 
+                                        className={S.btnDonated} 
+                                        onClick={() => mostrarForm(book)}
+                                        disabled={loading}
+                                    >
+                                        <img src={Edit} alt="Editar livro" />
+                                        Editar
+                                    </button>
+                                    <button 
+                                        className={S.btnDonated} 
+                                        onClick={() => deleteLivro(book)}
+                                        disabled={loading}
+                                    >
+                                        <img src={Delete} alt="Excluir livro" /> 
+                                        Excluir
+                                    </button>
+                                </div>
+                            </article>
+                        ))
+                    )}
+                </div>
+                
+                {editForm && (
+                    <div className={S.editForm}>
+                        <form 
+                            className={S.formStyle}
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                updateLivro(livroAtual.id);
+                            }}
+                        >
+                            <h2>Editar livro: {livroAtual.title}</h2>
+                            
+                            <label>
+                                <h3>Título:</h3>
+                                <input
+                                    type="text"
+                                    value={livroAtual.title || ""}
+                                    onChange={(e) =>
+                                        setLivroAtual({ ...livroAtual, title: e.target.value })
+                                    }
+                                    required
+                                />
+                            </label>
+                            
+                            <label>
+                                <h3>Autor:</h3>
+                                <input
+                                    type="text"
+                                    value={livroAtual.author || ""}
+                                    onChange={(e) =>
+                                        setLivroAtual({ ...livroAtual, author: e.target.value })
+                                    }
+                                    required
+                                />
+                            </label>
+                            
+                            <label>
+                                <h3>Categoria:</h3>
+                                <input
+                                    type="text"
+                                    value={livroAtual.category || ""}
+                                    onChange={(e) =>
+                                        setLivroAtual({ ...livroAtual, category: e.target.value })
+                                    }
+                                    required
+                                />
+                            </label>
+                            
+                            <label>
+                                <h3>URL da imagem:</h3>
+                                <input
+                                    type="text"
+                                    value={livroAtual.image_url || ""}
+                                    onChange={(e) =>
+                                        setLivroAtual({ ...livroAtual, image_url: e.target.value })
+                                    }
+                                    required
+                                />
+                            </label>
+                            
+                            <div className={S.divBtnDonated}>
+                                <button 
+                                    className={S.btnDonated} 
+                                    type="submit"
+                                    disabled={loading}
+                                >
+                                    {loading ? "Salvando..." : "Confirmar alterações"}
+                                </button>
+                                <button 
+                                    className={S.btnDonated} 
+                                    type="button" 
+                                    onClick={() => setEditForm(false)}
+                                    disabled={loading}
+                                >
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                )}
+            </section>
+        </>
     );
 }
