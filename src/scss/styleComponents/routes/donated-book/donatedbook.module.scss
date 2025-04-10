@@ -75,6 +75,9 @@
         @include mixins.mediaMobile{
             width: 100%;
             height: auto;
+        };
+        @include mixins.mediaTablet{
+            width: 30vw;
         }
     }
 
