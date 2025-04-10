@@ -34,6 +34,12 @@
     }
 
     .divLogo {
+        a{
+            text-decoration: none;
+            color: color.$text-header;
+            @include mixins.flex($align: center, $justify: space-around, $gap: 1rem)
+        }
+
         @include mixins.flex($justify: space-around, $align: center, $gap: 1rem);
 
         &:hover {

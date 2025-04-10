@@ -95,13 +95,15 @@ function App() {
           <img className={S.widthImg} id={S.invisible} src={MenuOn} alt="Menu hamburguer" />
         </div>
         <div className={S.divLogo}>
-          <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" className={S.wLogo} />
-          <h1>Livros Vai Na Web</h1>
+          <a href={"/"}>
+            <img src={Logo} alt="Logo do site Livros vai na web, onde apresenta um livro aberto com as folhas com a impressão de estarem sendo foleadas" className={S.wLogo} />
+            <h1>Livros Vai Na Web</h1>
+          </a>
         </div>
-        <Navigation 
-          menuOpen={menuOpen} 
-          closeMenu={closeMenu} 
-          setSearchQuery={setSearchQuery} 
+        <Navigation
+          menuOpen={menuOpen}
+          closeMenu={closeMenu}
+          setSearchQuery={setSearchQuery}
           searchQuery={searchQuery}
         />
       </section>
