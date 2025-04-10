@@ -8,6 +8,14 @@
     @include mixins.flex($justify: space-around, $align: center);
     padding: 2rem;
 
+    @include mixins.mediaTablet{
+        @include mixins.flex(
+            $align:center,
+            $justify:center,
+            $gap: 5rem
+        )
+    }
+
     .divLogo,
     .navigation,
     .divInput {
