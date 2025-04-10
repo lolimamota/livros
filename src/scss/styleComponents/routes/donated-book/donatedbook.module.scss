@@ -65,6 +65,7 @@
         margin: 1rem; // Adicionar margem para dar espaço ao efeito hover
         position: relative; // Posicionamento relativo para controlar z-index
         z-index: 1; // Z-index padrão
+        color: color.$text-h3;
     
         &:hover {
             transform: scale(1.03); 
