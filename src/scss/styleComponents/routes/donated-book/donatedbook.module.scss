@@ -55,11 +55,11 @@
     
     .articleDonated {
         @include mixins.flex($align: center, $justify: center, $gap: .5rem, $direction: column);
-        padding: 2rem;
+        padding: 1rem;
         border: solid color.$border;
         border-radius: 5rem;
         width: 20vw;
-        height: 40vh;
+        height: 45vh;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease; // Adicionar transição para box-shadow também
         margin: 1rem; // Adicionar margem para dar espaço ao efeito hover
