@@ -17,6 +17,10 @@
         height: 10vh;
         text-align: center;
         padding: 1rem;
+
+        @include mixins.mediaMobile{
+            width: 100%;
+        }
     }
 
     .divBtnDonated {
@@ -38,6 +42,8 @@
             $justify: center,
             $gap: 1rem);
 
+        
+
     }
 
     .divDonated {
@@ -45,11 +51,6 @@
         flex-wrap: wrap;
         overflow-y: scroll;
         padding: 1.5rem; // Adicionar padding para dar espaço aos cards durante o hover
-    
-        @include mixins.mediaMobile {
-            overflow-x: hidden;
-            @include mixins.flex($align: center, $justify: center, $direction: column);
-        }
     }
     
     .articleDonated {
@@ -69,6 +70,11 @@
             transform: scale(1.03); 
             box-shadow: 5px 5px 10px color.$text-h3;
             z-index: 2; // Aumentar z-index durante hover para ficar acima dos outros cards
+        };
+
+        @include mixins.mediaMobile{
+            width: 100%;
+            height: auto;
         }
     }
 
