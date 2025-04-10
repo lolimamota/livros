@@ -233,8 +233,6 @@ export default function ShowBook() {
                                 updateLivro(livroAtual.id);
                             }}
                         >
-                            <h2>Editar livro: {livroAtual.title}</h2>
-                            
                             <label>
                                 <h3>Título:</h3>
                                 <input
@@ -289,7 +287,7 @@ export default function ShowBook() {
                                     type="submit"
                                     disabled={loading}
                                 >
-                                    {loading ? "Salvando..." : "Confirmar alterações"}
+                                    {loading ? "Salvando..." : "Salvar alterações"}
                                 </button>
                                 <button 
                                     className={S.btnDonated} 
@@ -297,7 +295,7 @@ export default function ShowBook() {
                                     onClick={() => setEditForm(false)}
                                     disabled={loading}
                                 >
-                                    Cancelar
+                                    Cancelar alterações
                                 </button>
                             </div>
                         </form>

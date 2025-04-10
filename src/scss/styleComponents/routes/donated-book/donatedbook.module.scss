@@ -74,7 +74,7 @@
 
         @include mixins.mediaMobile{
             width: 100%;
-            height: auto;
+            height: 60vh;
         };
         @include mixins.mediaTablet{
             width: 30vw;
@@ -103,6 +103,11 @@
     padding: 10vw;
     z-index: 9999; // Z-index alto para garantir que o modal fique acima de outros elementos
     width: 50vw; // Largura do modal
+
+    @include mixins.mediaMobile{
+        width: 90%;
+        padding: 2vw;
+    }
 }
 
 .formStyle{
@@ -123,4 +128,16 @@
         }
     }
 
+    @include mixins.mediaMobile{
+        width: 100%;
+        padding-left: 0;
+
+        label{
+            width: 100%;
+
+            input{
+                width: 100%;
+            }
+        }
+    }
 }
